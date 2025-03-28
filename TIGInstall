@@ -1,0 +1,53 @@
+#!/bin/bash
+# installTIG.sh - Installs InfluxDB, Telegraf, and Grafana on Raspberry Pi OS Lite
+
+set -e
+
+echo "📦 Installing TIG Stack (Telegraf, InfluxDB, Grafana)..."
+
+# Update system
+sudo apt update && sudo apt upgrade -y
+
+# -------- INFLUXDB --------
+echo "📥 Installing InfluxDB..."
+
+# Add InfluxDB repo securely (modern GPG key handling)
+sudo mkdir -p /etc/apt/keyrings
+curl -s https://repos.influxdata.com/influxdata-archive_compat.key | gpg --dearmor | sudo tee /etc/apt/keyrings/influxdata-archive.gpg > /dev/null
+echo "deb [signed-by=/etc/apt/keyrings/influxdata-archive.gpg] https://repos.influxdata.com/debian bullseye stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
+
+# Update and install InfluxDB
+sudo apt update
+sudo apt install -y influxdb
+
+# Enable and start InfluxDB
+sudo systemctl enable influxdb
+sudo systemctl start influxdb
+
+# -------- TELEGRAF --------
+echo "📥 Installing Telegraf..."
+sudo apt install -y telegraf
+
+# Enable and start Telegraf
+sudo systemctl enable telegraf
+sudo systemctl start telegraf
+
+# -------- GRAFANA --------
+echo "📥 Installing Grafana..."
+
+# Add Grafana APT repo securely
+sudo apt install -y software-properties-common
+sudo mkdir -p /etc/apt/keyrings
+wget -q -O - https://apt.grafana.com/gpg.key | gpg --dearmor | sudo tee /etc/apt/keyrings/grafana.gpg > /dev/null
+echo "deb [signed-by=/etc/apt/keyrings/grafana.gpg] https://apt.grafana.com stable main" | sudo tee /etc/apt/sources.list.d/grafana.list
+
+# Install Grafana
+sudo apt update
+sudo apt install -y grafana
+
+# Enable and start Grafana
+sudo systemctl enable grafana-server
+sudo systemctl start grafana-server
+
+echo "✅ TIG Stack installation complete."
+echo "➡ Access Grafana via http://<your_pi_ip>:3000 (default login: admin / admin)"
