@@ -1,0 +1,4 @@
+echo "/*" > .gitignore
+echo "!.gitignore" >> .gitignore
+echo "!*.sh" >> .gitignore
+echo "!piosUpdate" >> .gitignore

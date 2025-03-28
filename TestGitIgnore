@@ -1,0 +1,7 @@
+cd ~/scr
+touch ignoreme.txt
+touch keepme.sh
+chmod +x keepme.sh
+
+git add .
+git status
