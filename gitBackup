@@ -1,31 +1,33 @@
 #!/bin/bash
 
 # ==============================================================================
-# SCRIPT: gitBackup
-# PURPOSE: Backup SSH keys, Git config, and .bashrc into ~/scr/backups/git_ssh_backup_<timestamp>
-#          Commit all contents to GitHub for full Git-based recovery
-# USAGE: Run ON THE PI before reimaging
+# SCRIPT: gitRestore
+# PURPOSE: Restore SSH keys, Git config, and .bashrc from the latest Git-tracked backup
+# USAGE: Run ON THE PI after reimaging and cloning your Git repo into ~/scr
 # ==============================================================================
 
 set -e
 
-TIMESTAMP=$(date +%Y%m%d_%H%M)
-DEST_DIR=~/scr/backups/git_ssh_backup_$TIMESTAMP
-mkdir -p "$DEST_DIR"
+BACKUP_ROOT=~/scr/backups
+LATEST_BACKUP=$(ls -dt "$BACKUP_ROOT"/git_ssh_backup_* 2>/dev/null | head -n 1)
 
-echo "Backing up SSH keys..."
-cp -r ~/.ssh "$DEST_DIR/" 2>/dev/null || echo "No SSH keys found."
+if [ -z "$LATEST_BACKUP" ] || [ ! -d "$LATEST_BACKUP" ]; then
+  echo "❌ No backup found in $BACKUP_ROOT"
+  exit 1
+fi
 
-echo "Backing up Git config..."
-cp ~/.gitconfig "$DEST_DIR/" 2>/dev/null || echo "No .gitconfig found."
+echo "Restoring from: $LATEST_BACKUP"
 
-echo "Backing up .bashrc..."
-cp ~/.bashrc "$DEST_DIR/" 2>/dev/null || echo "No .bashrc found."
+echo "Restoring SSH keys..."
+cp -r "$LATEST_BACKUP/.ssh" ~/
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/id_rsa 2>/dev/null || true
+chmod 644 ~/.ssh/id_rsa.pub 2>/dev/null || true
 
-echo "Committing backup to Git..."
-cd ~/scr
-git add .
-git commit -m "Backup Git/SSH config - $TIMESTAMP"
-git push
+echo "Restoring Git config..."
+cp "$LATEST_BACKUP/.gitconfig" ~/ 2>/dev/null || echo "⚠️ .gitconfig not found in backup"
 
-echo "✅ Backup complete. Stored in ~/scr/backups/git_ssh_backup_$TIMESTAMP"
+echo "Restoring .bashrc..."
+cp "$LATEST_BACKUP/.bashrc" ~/ 2>/dev/null || echo "⚠️ .bashrc not found in backup"
+
+echo "✅ Restore complete. You may want to run: source ~/.bashrc"

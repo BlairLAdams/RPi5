@@ -1,0 +1,65 @@
+#!/bin/bash
+
+# ==============================================================================
+# SCRIPT: gitBootstrap
+# PURPOSE: One-time setup script for freshly imaged Raspberry Pi OS Lite
+#          - Installs Git
+#          - Clones GitHub repo to ~/scr
+#          - Adds ~/scr to PATH
+#          - Optionally runs gitRestore to rehydrate SSH and Git config
+#
+# USAGE INSTRUCTIONS:
+#
+# 1. Flash Raspberry Pi OS Lite and boot the Pi with SSH enabled
+# 2. From your laptop or workstation:
+#
+#    a. Transfer the script to the Pi:
+#       scp gitBootstrap pi@raspberrypi.local:~/
+#
+#    b. SSH into the Pi:
+#       ssh pi@raspberrypi.local
+#
+#    c. Run the bootstrap:
+#       chmod +x ~/gitBootstrap
+#       ./gitBootstrap
+#
+# 3. The script will:
+#    - Install Git
+#    - Clone your GitHub repo to ~/scr
+#    - Add ~/scr to your PATH
+#    - Prompt whether to run gitRestore to restore ~/.ssh, .gitconfig, and .bashrc
+#
+# 4. Afterward, restart your shell or run:
+#       source ~/.bashrc
+# ==============================================================================
+
+set -e
+
+REPO_SSH="git@github.com:blairladams/RPi5.git"
+DEST_DIR=~/scr
+
+echo "🔧 Installing Git..."
+sudo apt update
+sudo apt install -y git
+
+echo "📁 Cloning Git repo into $DEST_DIR..."
+git clone "$REPO_SSH" "$DEST_DIR"
+
+echo "🔄 Adding ~/scr to PATH in ~/.bashrc if not already present..."
+if ! grep -q 'export PATH=\$HOME/scr:\$PATH' ~/.bashrc; then
+  echo 'export PATH=$HOME/scr:$PATH' >> ~/.bashrc
+fi
+export PATH=$HOME/scr:$PATH
+
+echo "✅ Git repo cloned and ~/scr added to PATH."
+
+echo
+read -rp "⚠️  Do you want to restore your SSH & Git config from the latest backup using gitRestore? [y/N]: " confirm
+if [[ "$confirm" =~ ^[Yy]$ ]]; then
+  "$DEST_DIR/gitRestore"
+else
+  echo "📝 Skipping restore. You can run it anytime with:"
+  echo "     $DEST_DIR/gitRestore"
+fi
+
+echo "🎉 Bootstrap complete. Run 'source ~/.bashrc' or reopen your shell to apply PATH changes."
