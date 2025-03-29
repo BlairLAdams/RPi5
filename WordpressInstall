@@ -1,0 +1,89 @@
+#!/bin/bash
+# installWordPress.sh - Installs WordPress using NGINX and PostgreSQL on Raspberry Pi
+
+set -e
+
+echo "📰 Installing WordPress on NGINX + PostgreSQL..."
+
+# Variables
+DB_NAME="wordpress"
+DB_USER="wp_user"
+DB_PASS="securepass"
+PG_PLUGIN_REPO="https://github.com/kevinoid/postgresql-for-wordpress.git"
+
+# -------- Install PHP, NGINX, and dependencies --------
+sudo apt update
+sudo apt install -y nginx php-fpm php-pgsql php-gd php-curl php-mbstring php-xml php-zip wget unzip postgresql
+
+# Start services
+sudo systemctl enable --now nginx
+sudo systemctl enable --now php7.4-fpm || sudo systemctl enable --now php8.2-fpm
+
+# -------- Setup PostgreSQL Database --------
+echo "🗃 Setting up PostgreSQL database and user..."
+sudo -u postgres psql <<EOF
+CREATE DATABASE $DB_NAME;
+CREATE USER $DB_USER WITH PASSWORD '$DB_PASS';
+GRANT ALL PRIVILEGES ON DATABASE $DB_NAME TO $DB_USER;
+EOF
+
+# -------- Download and Configure WordPress --------
+echo "📥 Downloading WordPress..."
+cd /tmp
+wget https://wordpress.org/latest.tar.gz
+tar xzvf latest.tar.gz
+sudo rm -rf /var/www/wordpress
+sudo mv wordpress /var/www/
+sudo chown -R www-data:www-data /var/www/wordpress
+
+# -------- Add PostgreSQL compatibility plugin --------
+echo "🔌 Installing PostgreSQL plugin for WordPress..."
+cd /var/www/wordpress/wp-content/plugins
+sudo git clone "$PG_PLUGIN_REPO" pg4wp
+sudo cp pg4wp/db.php ../
+
+# -------- Create wp-config.php --------
+echo "⚙️ Configuring WordPress to use PostgreSQL..."
+cd /var/www/wordpress
+sudo cp wp-config-sample.php wp-config.php
+
+sudo sed -i "s/database_name_here/$DB_NAME/" wp-config.php
+sudo sed -i "s/username_here/$DB_USER/" wp-config.php
+sudo sed -i "s/password_here/$DB_PASS/" wp-config.php
+sudo sed -i "s/localhost/127.0.0.1/" wp-config.php
+sudo sed -i "s/'mysql'/'pgsql'/" wp-config.php
+
+# Add plugin hook
+sudo sed -i "/define( 'DB_COLLATE', '' );/a define( 'DB_DRIVER', 'pgsql' );" wp-config.php
+
+# -------- Configure NGINX --------
+echo "🌐 Configuring NGINX for WordPress..."
+sudo tee /etc/nginx/sites-available/wordpress > /dev/null <<EOF
+server {
+    listen 80;
+    server_name _;
+    root /var/www/wordpress;
+
+    index index.php index.html index.htm;
+
+    location / {
+        try_files \$uri \$uri/ /index.php?\$args;
+    }
+
+    location ~ \.php\$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/run/php/php$(php -r 'echo PHP_MAJOR_VERSION.".".PHP_MINOR_VERSION;')-fpm.sock;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+}
+EOF
+
+sudo ln -sf /etc/nginx/sites-available/wordpress /etc/nginx/sites-enabled/
+sudo rm -f /etc/nginx/sites-enabled/default
+sudo nginx -t && sudo systemctl reload nginx
+
+echo "✅ WordPress installed on NGINX with PostgreSQL backend."
+echo "➡ Access it at: http://<your_pi_ip>/"

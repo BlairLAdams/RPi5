@@ -1,0 +1,16 @@
+#!/bin/bash
+# installNginx.sh - Installs NGINX and prepares it for reverse proxy use
+
+set -e
+
+echo "🌐 Installing NGINX..."
+
+sudo apt update
+sudo apt install -y nginx
+
+# Enable and start
+sudo systemctl enable nginx
+sudo systemctl start nginx
+
+echo "✅ NGINX installed."
+echo "➡ Default page: http://<your_pi_ip>"

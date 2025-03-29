@@ -1,38 +1,59 @@
 #!/bin/bash
 
 # ==============================================================================
-# SCRIPT:  gitBackup
-# PURPOSE: Backup SSH keys, Git config, and .bashrc from Pi,
-#          commit scripts to ~/scr Git repo, then SCP everything to your laptop.
+# SCRIPT: gitBackup
+# PURPOSE: Backup SSH keys, Git config, and .bashrc for Git/VS Code recovery.
+#          Commit current scripts in ~/scr and SCP the backup to your laptop.
 #
-# USAGE: Run ON THE PI before reimaging.
+# USAGE:
+#   Run ON THE PI before reimaging.
+#   ./gitBackup
+#
+# NOTES:
+# - Requires GitHub SSH key setup for pushing
+# - Assumes ~/scr is your Git repo
 # ==============================================================================
+
+set -e
 
 TIMESTAMP=$(date +%Y%m%d_%H%M)
 BACKUP_DIR=~/git_ssh_backup
 ARCHIVE_NAME="git_ssh_backup_$TIMESTAMP"
 LAPTOP_USER=$(whoami)
+
+# Try to auto-detect SSH source IP from SSH session
 SSH_SOURCE_IP=$(who | awk '/pts/ {print $NF}' | sed 's/[()]//g' | head -n 1)
+
+# Fallback: ask the user
+if [ -z "$SSH_SOURCE_IP" ]; then
+  echo "Could not auto-detect laptop IP. You may not be SSH’d into the Pi."
+  read -rp "Enter your laptop hostname or IP (e.g., 192.168.1.42): " SSH_SOURCE_IP
+fi
+
 LAPTOP_DEST=~/rpi_backup_$TIMESTAMP
 
 echo "Creating backup directory at $BACKUP_DIR"
 mkdir -p "$BACKUP_DIR"
 
 echo "Backing up SSH keys..."
-cp -r ~/.ssh "$BACKUP_DIR/"
+cp -r ~/.ssh "$BACKUP_DIR/" 2>/dev/null || echo "No SSH keys found."
+
+echo "Backing up Git config..."
 cp ~/.gitconfig "$BACKUP_DIR/" 2>/dev/null || echo "No .gitconfig found."
+
+echo "Backing up .bashrc..."
 cp ~/.bashrc "$BACKUP_DIR/" 2>/dev/null || echo "No .bashrc found."
 
-# Commit current ~/scr scripts to Git
-echo "Committing scripts to Git..."
-cd ~/scr || exit 1
-git add gitBackup gitRestore
-git commit -m "Backup timestamp $TIMESTAMP: add/commit latest backup & restore scripts"
+# Git commit and push from ~/scr
+echo "Committing ~/scr to Git..."
+cd ~/scr || { echo "Directory ~/scr not found"; exit 1; }
+git add .
+git commit -m "Backup timestamp $TIMESTAMP: update scripts"
 git push
 
-# SCP the backup folder to laptop
+# Transfer backup to laptop
 echo "Transferring backup to $LAPTOP_USER@$SSH_SOURCE_IP:$LAPTOP_DEST"
 ssh "$LAPTOP_USER@$SSH_SOURCE_IP" "mkdir -p $LAPTOP_DEST"
 scp -r "$BACKUP_DIR" "$LAPTOP_USER@$SSH_SOURCE_IP:$LAPTOP_DEST"
 
-echo "Backup and Git commit complete. Safe to reimage."
+echo "✅ Git + SSH config backup complete. Safe to reimage."
