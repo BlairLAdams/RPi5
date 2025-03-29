@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# ==============================================================================
+# SCRIPT:  gitBackup
+# PURPOSE: Backup SSH keys, Git config, and .bashrc from Pi,
+#          commit scripts to ~/scr Git repo, then SCP everything to your laptop.
+#
+# USAGE: Run ON THE PI before reimaging.
+# ==============================================================================
+
+TIMESTAMP=$(date +%Y%m%d_%H%M)
+BACKUP_DIR=~/git_ssh_backup
+ARCHIVE_NAME="git_ssh_backup_$TIMESTAMP"
+LAPTOP_USER=$(whoami)
+SSH_SOURCE_IP=$(who | awk '/pts/ {print $NF}' | sed 's/[()]//g' | head -n 1)
+LAPTOP_DEST=~/rpi_backup_$TIMESTAMP
+
+echo "Creating backup directory at $BACKUP_DIR"
+mkdir -p "$BACKUP_DIR"
+
+echo "Backing up SSH keys..."
+cp -r ~/.ssh "$BACKUP_DIR/"
+cp ~/.gitconfig "$BACKUP_DIR/" 2>/dev/null || echo "No .gitconfig found."
+cp ~/.bashrc "$BACKUP_DIR/" 2>/dev/null || echo "No .bashrc found."
+
+# Commit current ~/scr scripts to Git
+echo "Committing scripts to Git..."
+cd ~/scr || exit 1
+git add gitBackup gitRestore
+git commit -m "Backup timestamp $TIMESTAMP: add/commit latest backup & restore scripts"
+git push
+
+# SCP the backup folder to laptop
+echo "Transferring backup to $LAPTOP_USER@$SSH_SOURCE_IP:$LAPTOP_DEST"
+ssh "$LAPTOP_USER@$SSH_SOURCE_IP" "mkdir -p $LAPTOP_DEST"
+scp -r "$BACKUP_DIR" "$LAPTOP_USER@$SSH_SOURCE_IP:$LAPTOP_DEST"
+
+echo "Backup and Git commit complete. Safe to reimage."
