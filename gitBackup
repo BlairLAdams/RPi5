@@ -1,33 +1,37 @@
 #!/bin/bash
 
 # ==============================================================================
-# SCRIPT: gitRestore
-# PURPOSE: Restore SSH keys, Git config, and .bashrc from the latest Git-tracked backup
-# USAGE: Run ON THE PI after reimaging and cloning your Git repo into ~/scr
+# SCRIPT: gitBackup
+# PURPOSE: Create a timestamped archive of all scripts and Grafana config
+#          - Stores archive in /mnt/ssd/backups
+#          - Optionally commits & pushes to GitHub
 # ==============================================================================
 
 set -e
 
-BACKUP_ROOT=~/scr/backups
-LATEST_BACKUP=$(ls -dt "$BACKUP_ROOT"/git_ssh_backup_* 2>/dev/null | head -n 1)
+REPO_DIR="/mnt/ssd/RPi5"
+SCRIPT_DIR="$REPO_DIR/scripts"
+GRAFANA_CONF_DIR="/mnt/ssd/grafana-config"
+BACKUP_DIR="/mnt/ssd/backups"
+DATE_TAG=$(date +%Y-%m-%d-%H%M%S)
+BACKUP_FILE="$BACKUP_DIR/backup-$DATE_TAG.tar.gz"
 
-if [ -z "$LATEST_BACKUP" ] || [ ! -d "$LATEST_BACKUP" ]; then
-  echo "❌ No backup found in $BACKUP_ROOT"
-  exit 1
+echo "📦 Creating backup archive at: $BACKUP_FILE"
+mkdir -p "$BACKUP_DIR"
+
+tar -czf "$BACKUP_FILE" \
+  -C "$REPO_DIR" scripts \
+  -C /mnt/ssd grafana-config
+
+echo "✅ Backup complete."
+
+read -rp "📤 Commit & push latest changes to GitHub? [y/N]: " confirm_push
+if [[ "$confirm_push" =~ ^[Yy]$ ]]; then
+  cd "$REPO_DIR"
+  git add .
+  git commit -m "Backup on $DATE_TAG"
+  git push
+  echo "🚀 Git push complete."
+else
+  echo "⏭️  Skipping Git push."
 fi
-
-echo "Restoring from: $LATEST_BACKUP"
-
-echo "Restoring SSH keys..."
-cp -r "$LATEST_BACKUP/.ssh" ~/
-chmod 700 ~/.ssh
-chmod 600 ~/.ssh/id_rsa 2>/dev/null || true
-chmod 644 ~/.ssh/id_rsa.pub 2>/dev/null || true
-
-echo "Restoring Git config..."
-cp "$LATEST_BACKUP/.gitconfig" ~/ 2>/dev/null || echo "⚠️ .gitconfig not found in backup"
-
-echo "Restoring .bashrc..."
-cp "$LATEST_BACKUP/.bashrc" ~/ 2>/dev/null || echo "⚠️ .bashrc not found in backup"
-
-echo "✅ Restore complete. You may want to run: source ~/.bashrc"

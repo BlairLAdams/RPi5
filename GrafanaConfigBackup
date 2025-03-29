@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# ==============================================================================
+# SCRIPT: grafanaDemoBackup
+# PURPOSE: Backup Grafana config, dashboards, datasources into Git-tracked folder
+# USAGE: Run ON THE PI to capture current Grafana config into ~/scr/backups/
+# ==============================================================================
+
+set -e
+
+TIMESTAMP=$(date +%Y%m%d_%H%M)
+BACKUP_DIR=~/scr/backups/grafana_backup_$TIMESTAMP
+GRAFANA_URL=http://localhost:3000
+AUTH=admin:admin
+
+mkdir -p "$BACKUP_DIR/dashboards" "$BACKUP_DIR/datasources"
+
+echo "🔍 Backing up Grafana dashboards..."
+DASHBOARDS=$(curl -s -u "$AUTH" "$GRAFANA_URL/api/search?query=" | jq -r '.[] | select(.type=="dash-db") | .uid')
+
+for uid in $DASHBOARDS; do
+  curl -s -u "$AUTH" "$GRAFANA_URL/api/dashboards/uid/$uid" > "$BACKUP_DIR/dashboards/$uid.json"
+done
+
+echo "🔍 Backing up Grafana datasources..."
+curl -s -u "$AUTH" "$GRAFANA_URL/api/datasources" > "$BACKUP_DIR/datasources/datasources.json"
+
+echo "📂 Copying provisioning configs and grafana.ini..."
+sudo cp -r /etc/grafana/provisioning "$BACKUP_DIR/" 2>/dev/null || echo "⚠️ No provisioning found"
+sudo cp /etc/grafana/grafana.ini "$BACKUP_DIR/" 2>/dev/null || echo "⚠️ grafana.ini not found or unchanged"
+
+echo "$TIMESTAMP" > "$BACKUP_DIR/backup.meta"
+
+echo "📦 Committing backup to Git..."
+cd ~/scr
+git add "$BACKUP_DIR"
+git commit -m "Grafana backup $TIMESTAMP"
+git push
+
+echo "✅ Grafana backup complete: $BACKUP_DIR"
