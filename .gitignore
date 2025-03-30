@@ -1,4 +1,8 @@
-echo "/*" > .gitignore
-echo "!.gitignore" >> .gitignore
-echo "!*.sh" >> .gitignore
-echo "!piosUpdate" >> .gitignore
+# Ignore everything
+/*
+
+# But don't ignore the scr directory
+!/scr
+
+# Inside scr, don't ignore its contents
+/scr/*
