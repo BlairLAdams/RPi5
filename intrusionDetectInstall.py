@@ -86,4 +86,4 @@ combined_script_path = "/mnt/data/setupIntrusionMonitor.sh"
 with open(combined_script_path, "w") as f:
     f.write(script_with_dashboard)
 
-combined_script_path
+combined_script_path 
