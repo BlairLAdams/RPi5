@@ -1,0 +1,14 @@
+cd /opt/loki
+
+echo "[INFO] Re-downloading Loki and Promtail with elevated permissions..."
+
+sudo curl -Lo loki-linux-arm64.zip https://github.com/grafana/loki/releases/latest/download/loki-linux-arm64.zip
+sudo curl -Lo promtail-linux-arm64.zip https://github.com/grafana/loki/releases/latest/download/promtail-linux-arm64.zip
+
+echo "[INFO] Extracting..."
+sudo unzip -o loki-linux-arm64.zip
+sudo unzip -o promtail-linux-arm64.zip
+
+echo "[INFO] Moving binaries to /usr/local/bin..."
+sudo chmod +x loki promtail
+sudo mv loki promtail /usr/local/bin/

@@ -1,0 +1,17 @@
+- Flash Pi OS Lite to MicroSD
+- Add a blank ssh file
+- PiOSTools.sh 
+- PiOSHarden.sh
+- gitBootStrap.sh
+- Setup .gitignore?
+- Setup vs code token/pass phrase
+- mkdir ~/scr
+- Pull git/RPi5 into ~/scr
+- firewallConfig.sh
+- grafanaDemoInstall.sh
+- add prometheus data source in grafana
+- 
+- decide what's next
+  - nginx: reverse proxy (promethius,grafana)
+  - dataSF: water quality? parcel maps?
+  - baaqmd: air quality? meteorology?
