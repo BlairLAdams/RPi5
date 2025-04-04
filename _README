@@ -7,11 +7,13 @@
 - Setup vs code token/pass phrase
 - mkdir ~/scr
 - Pull git/RPi5 into ~/scr
-- firewallConfig.sh
+- Install Postgres
 - grafanaDemoInstall.sh
-- add prometheus data source in grafana
-- 
-- decide what's next
+- Add prometheus data source in grafana
+- Install Metabase
+- firewallConfig.sh
+
+- Decide what's next
   - nginx: reverse proxy (promethius,grafana)
   - dataSF: water quality? parcel maps?
   - baaqmd: air quality? meteorology?

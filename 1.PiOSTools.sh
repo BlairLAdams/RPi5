@@ -1,18 +1,24 @@
 #!/bin/bash
-# BasicPiOSTools - Base setup for Raspberry Pi OS Lite (headless)
-# Installs basic utilities, configures timezone, SSH, and updates system
+# BasicPiOSTools.sh - Base setup for Raspberry Pi OS Lite (headless)
+# Installs essential tools, enables SSH & firewall, configures timezone, and prepares Python environment
 
 set -e
 
 echo "🛠 Starting base system setup..."
 
-# Update & upgrade
-echo "📦 Updating package lists..."
+# ---------------------------------------------------------
+# 1. System Update
+# ---------------------------------------------------------
+echo "📦 Updating package lists and upgrading system..."
 sudo apt update && sudo apt upgrade -y
 
-# Install essential tools
-echo "📦 Installing base packages..."
+# ---------------------------------------------------------
+# 2. Install Core Tools
+# ---------------------------------------------------------
+echo "📦 Installing essential tools..."
 sudo apt install -y \
+  python3 \
+  python3-pip \
   git \
   curl \
   wget \
@@ -27,27 +33,44 @@ sudo apt install -y \
   gnupg \
   lsb-release
 
-# Set timezone (optional: update to your local zone if needed)
+# ---------------------------------------------------------
+# 3. Configure Timezone
+# ---------------------------------------------------------
 echo "🌐 Setting timezone to UTC..."
 sudo timedatectl set-timezone UTC
 
-# Enable UFW and allow SSH
-echo "🛡 Enabling UFW firewall..."
+# ---------------------------------------------------------
+# 4. Configure Firewall
+# ---------------------------------------------------------
+echo "🛡 Enabling UFW firewall and allowing SSH..."
 sudo ufw allow OpenSSH
 sudo ufw --force enable
 
-# Enable unattended security updates
-echo "🔒 Enabling unattended upgrades..."
-sudo dpkg-reconfigure --priority=low unattended-upgrades
-
-# Confirm SSH is enabled
-echo "🔌 Ensuring SSH is enabled..."
+# ---------------------------------------------------------
+# 5. Enable SSH
+# ---------------------------------------------------------
+echo "🔌 Ensuring SSH is enabled and running..."
 sudo systemctl enable ssh
 sudo systemctl start ssh
 
-# Final system upgrade and cleanup
-echo "📦 Final upgrade and cleanup..."
+# ---------------------------------------------------------
+# 6. Enable Unattended Upgrades
+# ---------------------------------------------------------
+echo "🔒 Enabling unattended security upgrades..."
+sudo dpkg-reconfigure --priority=low unattended-upgrades
+
+# ---------------------------------------------------------
+# 7. Cleanup
+# ---------------------------------------------------------
+echo "🧹 Cleaning up package cache..."
 sudo apt autoremove -y
 sudo apt autoclean -y
+
+# ---------------------------------------------------------
+# 8. Confirm Python Setup
+# ---------------------------------------------------------
+echo "🐍 Verifying Python environment..."
+python3 --version
+pip3 --version
 
 echo "✅ Base system setup complete."
