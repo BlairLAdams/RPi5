@@ -1,0 +1,16 @@
+# Keep these tracked
+!.gitignore
+!README.md
+!**/*.sh
+!**/*.py
+!**/*.sql
+!**/*.yml
+
+# Ignore noise
+__pycache__/
+*.pyc
+.venv/
+.env
+dbt/target/
+dagster_project/.dagster/
+.vscode/
