@@ -1,7 +1,0 @@
-{
-  "username": "demo",
-  "password": "demo1234",
-  "org": "demo-org",
-  "bucket": "demo-bucket",
-  "retention": "24h"
-}
