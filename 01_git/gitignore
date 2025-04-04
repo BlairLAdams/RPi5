@@ -1,0 +1,8 @@
+# Ignore everything
+/*
+
+# But don't ignore the scr directory
+!/scr
+
+# Inside scr, don't ignore its contents
+/scr/*

@@ -1,0 +1,16 @@
+- Flash Pi OS Lite to MicroSD
+- Add a blank ssh file
+- PiOSTools.sh 
+- PiOSHarden.sh
+- gitBootStrap.sh
+- Setup .gitignore?
+- Setup vs code token/pass phrase
+- mkdir ~/scr
+- Pull git/RPi5 into ~/scr
+- Install Postgres
+- grafanaDemoInstall.sh
+- Add prometheus data source in grafana
+- Install Metabase
+- firewallConfig.sh
+- Water Quality Sample Data 
+- IIOT Sample Data
