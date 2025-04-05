@@ -1,6 +1,6 @@
 - Flash Pi OS Lite to MicroSD
 - Add a blank ssh file
-- PiOSTools.sh 
+- BasicPiOSTools.sh 
 - PiOSHarden.sh
 - gitBootStrap.sh
 - Setup .gitignore?
