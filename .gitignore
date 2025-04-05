@@ -1,42 +1,19 @@
-# Python cache and logs
-__pycache__/
-*.pyc
-*.pyo
-*.log
-
-# Python packaging and environment
-*.egg-info/
-.venv/
-.env
-.env.*
-
-# dbt build artifacts
-dbt/target/
-dbt/.dbt/
-dbt/dbt_modules/
-dbt/packages.yml
-
-# dagster cache and runtime folders
-dagster_home/
-dagster_project/.dagster/
-dagster_project/.pytest_cache/
-dagster_project/.mypy_cache/
-
-# Prometheus and Node Exporter binaries
-*.pid
-*.out
-*.err
-
-# Shared datasets that are large or temporary
-shared/datasets/*.zip
-shared/datasets/*.tar.gz
-
-# Editor & OS junk
-.vscode/
+# OS files
 .DS_Store
 Thumbs.db
-.ipynb_checkpoints/
 
-# Keep these always tracked
-!.gitignore
-!README.md
+# Editor/IDE artifacts
+*.swp
+*.swo
+*.bak
+*.tmp
+*~
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Log or runtime files
+*.log
+*.pid
+
