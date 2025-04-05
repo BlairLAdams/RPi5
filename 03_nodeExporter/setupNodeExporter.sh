@@ -1,61 +1,89 @@
 #!/bin/bash
-# ✅ Filename: setupGrafana.sh
-# 📦 Purpose: Install Grafana on Raspberry Pi OS (64-bit)
+# ✅ Filename: setupNodeExporter.sh
+# 📦 Purpose: Install and configure Node Exporter on Raspberry Pi OS (ARM64)
 # 💻 Platform: Raspberry Pi OS Bookworm (aarch64)
-# 🧠 Style: PiosHarden-format with full verification and clean reruns
+# 🧠 Style: Follows PiosHarden.sh formatting with checklist comments
 
 # ─────────────────────────────────────────────────────────────────────────────
-# 🔄 STEP 1: CLEAN UP PREVIOUS INSTALLS
+# 📦 STEP 1: DOWNLOAD NODE EXPORTER (ARM64)
 # ─────────────────────────────────────────────────────────────────────────────
-echo "🧹 Cleaning up previous Grafana installations..."
+echo "📦 Downloading Node Exporter for ARM64..."
 
-sudo systemctl stop grafana-server 2>/dev/null
-sudo systemctl disable grafana-server 2>/dev/null
-sudo rm -rf /etc/grafana /var/lib/grafana /usr/share/grafana
-sudo rm -f grafana_10.3.1_arm64.deb
+TEMP_ARCHIVE="node_exporter-1.3.1.linux-arm64.tar.gz"
+DOWNLOAD_URL="https://github.com/prometheus/node_exporter/releases/download/v1.3.1/${TEMP_ARCHIVE}"
+
+if [ ! -f "$TEMP_ARCHIVE" ]; then
+  curl -fLO "$DOWNLOAD_URL" || {
+    echo "❌ Failed to download Node Exporter binary."
+    exit 1
+  }
+else
+  echo "⏭ Archive already exists, skipping download."
+fi
 
 # ─────────────────────────────────────────────────────────────────────────────
-# 📥 STEP 2: DOWNLOAD GRAFANA DEB PACKAGE (ARM64)
+# 📂 STEP 2: EXTRACT AND INSTALL BINARY
 # ─────────────────────────────────────────────────────────────────────────────
-echo "📥 Downloading Grafana 10.3.1 ARM64 .deb package..."
+echo "📂 Extracting Node Exporter..."
 
-curl -fLO https://dl.grafana.com/oss/release/grafana_10.3.1_arm64.deb || {
-  echo "❌ Failed to download Grafana. Exiting."
+tar -xzf "$TEMP_ARCHIVE"
+sudo mv -f node_exporter-1.3.1.linux-arm64/node_exporter /usr/local/bin/
+
+# Verify binary
+if ! command -v node_exporter &> /dev/null; then
+  echo "❌ node_exporter binary not found after install."
   exit 1
-}
+fi
+
+# Clean up
+rm -rf node_exporter-1.3.1.linux-arm64 "$TEMP_ARCHIVE"
+echo "🧼 Cleanup complete."
 
 # ─────────────────────────────────────────────────────────────────────────────
-# 🛠️ STEP 3: INSTALL GRAFANA VIA dpkg
+# ⚙️ STEP 3: CREATE SYSTEMD SERVICE
 # ─────────────────────────────────────────────────────────────────────────────
-echo "🛠 Installing Grafana .deb package..."
+echo "⚙️ Creating systemd service file..."
 
-sudo dpkg -i grafana_10.3.1_arm64.deb || sudo apt-get install -f -y
+SERVICE_FILE="/etc/systemd/system/node_exporter.service"
+
+sudo tee "$SERVICE_FILE" > /dev/null <<EOF
+[Unit]
+Description=Prometheus Node Exporter
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/node_exporter
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+EOF
 
 # ─────────────────────────────────────────────────────────────────────────────
-# 🚀 STEP 4: ENABLE AND START SYSTEMD SERVICE
+# 🔁 STEP 4: RELOAD SYSTEMD AND (RE)START SERVICE
 # ─────────────────────────────────────────────────────────────────────────────
-echo "🚀 Enabling and starting grafana-server..."
+echo "🔁 Enabling and starting Node Exporter..."
 
 sudo systemctl daemon-reexec
 sudo systemctl daemon-reload
-sudo systemctl enable grafana-server
-sudo systemctl restart grafana-server
+sudo systemctl enable node_exporter
+sudo systemctl restart node_exporter
 
 # ─────────────────────────────────────────────────────────────────────────────
-# 🔥 STEP 5: OPEN PORT 3000 IN FIREWALL
+# 🔥 STEP 5: ALLOW FIREWALL PORT 9100
 # ─────────────────────────────────────────────────────────────────────────────
-echo "🔥 Opening port 3000 in UFW for Grafana UI..."
-sudo ufw allow 3000/tcp comment '🔸 Grafana Web UI'
+echo "🔥 Adding firewall rule for port 9100..."
+sudo ufw allow 9100/tcp comment '🔸 Node Exporter Metrics'
 
 # ─────────────────────────────────────────────────────────────────────────────
-# 🔍 STEP 6: VERIFY SERVICE AND PORT
+# 🔍 STEP 6: VERIFY PORT AND STATUS
 # ─────────────────────────────────────────────────────────────────────────────
-echo "🔍 Verifying Grafana service and network binding..."
+echo "🔍 Verifying exporter status and port binding..."
 
-if curl -s --head http://localhost:3000 | grep "200 OK" > /dev/null; then
-  echo "✅ Grafana is running!"
-  echo "🔗 Access Grafana at: http://$(hostname -I | cut -d' ' -f1):3000"
+if curl -s --head http://localhost:9100/metrics | grep "200 OK" > /dev/null; then
+  echo "✅ Node Exporter is running and accessible!"
+  echo "🔗 Metrics available at: http://$(hostname -I | cut -d' ' -f1):9100/metrics"
 else
-  echo "⚠️ Grafana service may be running, but it's not responding on port 3000."
-  echo "   Check with: sudo journalctl -u grafana-server -n 50"
+  echo "⚠️ Node Exporter service running but not responding on port 9100."
+  sudo systemctl status node_exporter
 fi
