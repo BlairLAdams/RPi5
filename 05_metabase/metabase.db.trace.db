@@ -1,0 +1,24 @@
+2025-04-07 13:37:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "QRTZ_SCHEDULER_STATE" not found (this database is empty); SQL statement:
+SELECT * FROM QRTZ_SCHEDULER_STATE WHERE SCHED_NAME = 'MetabaseScheduler' [42104-214]
+2025-04-07 13:38:18 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SETTING" not found (this database is empty); SQL statement:
+SELECT * FROM "SETTING" WHERE ("KEY" = ?) AND ("VALUE" > ?) [42104-214]
+2025-04-07 13:53:55 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SETTING" not found (this database is empty); SQL statement:
+SELECT * FROM "SETTING" WHERE ("KEY" = ?) AND ("VALUE" > ?) [42104-214]
+2025-04-07 13:54:37 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SETTING" not found (this database is empty); SQL statement:
+SELECT EXISTS (SELECT 1 FROM "SETTING" WHERE "KEY" = ?) AS "EXISTS" [42104-214]
+2025-04-07 13:54:37 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SETTING" not found (this database is empty); SQL statement:
+SELECT EXISTS (SELECT 1 FROM "SETTING" WHERE "KEY" = ?) AS "EXISTS" [42104-214]
+2025-04-07 15:05:54 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SETTING" not found (this database is empty); SQL statement:
+SELECT * FROM "SETTING" WHERE ("KEY" = ?) AND ("VALUE" > ?) [42104-214]
+2025-04-07 15:06:01 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SETTING" not found (this database is empty); SQL statement:
+SELECT EXISTS (SELECT 1 FROM "SETTING" WHERE "KEY" = ?) AS "EXISTS" [42104-214]
+2025-04-07 15:06:01 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SETTING" not found (this database is empty); SQL statement:
+SELECT EXISTS (SELECT 1 FROM "SETTING" WHERE "KEY" = ?) AS "EXISTS" [42104-214]

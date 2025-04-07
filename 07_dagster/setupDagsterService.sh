@@ -1,57 +1,64 @@
 #!/bin/bash
 #
-# 📛 Filename: setupFirewallAndRestart.sh
-# 🛡️ Description: Configures UFW firewall rules and restarts monitoring services.
-# 🔐 Use with caution on headless Pi — ensure SSH (port 22) is always allowed.
+# 📛 Filename: setupDagsterService.sh
+# 📝 Description: Systemd service installer for Dagster dev UI on port 3300
+# ⛓️ Depends on: Python virtualenv with Dagster installed, workspace.yaml, and repo
 # 📂 Location: ~/scr
+# 🧠 Notes: Assumes project is located in ~/dagster_proj
 # ✅ Status: Production-ready
 
 # ╭─────────────────────────────────────────────────────────────╮
-# │ 🛑 SAFETY CHECK: Must be run as root                        │
+# │ 💡 DEFINE SERVICE PARAMETERS                                │
+# ╰─────────────────────────────────────────────────────────────╯
+SERVICE_NAME="dagster"
+PROJECT_DIR="/home/blair/dagster_proj"
+VENV_PATH="$PROJECT_DIR/venv/bin/activate"
+DAGSTER_COMMAND="dagster dev -h 0.0.0.0 -p 3300"
+SERVICE_PATH="/etc/systemd/system/${SERVICE_NAME}.service"
+
+# ╭─────────────────────────────────────────────────────────────╮
+# │ 🛑 EXIT IF NOT ROOT                                          │
 # ╰─────────────────────────────────────────────────────────────╯
 if [[ $EUID -ne 0 ]]; then
-  echo "❌ Please run this script with sudo."
+  echo "❌ This script must be run with sudo."
   exit 1
 fi
 
 # ╭─────────────────────────────────────────────────────────────╮
-# │ 🔧 UFW RULE RESET                                           │
+# │ 📄 CREATE SYSTEMD SERVICE FILE                              │
 # ╰─────────────────────────────────────────────────────────────╯
-echo "🧱 [INFO] Cleaning up existing UFW rules..."
+echo "⚙️  Creating systemd service file for Dagster..."
 
-for PORT in 22 3000 9090 3300 8080 5432 3001; do
-  sudo ufw delete allow "${PORT}/tcp" 2>/dev/null || true
-done
+cat > "$SERVICE_PATH" <<EOF
+[Unit]
+Description=Dagster Dev UI
+After=network.target
+
+[Service]
+Type=simple
+User=blair
+WorkingDirectory=$PROJECT_DIR
+ExecStart=/bin/bash -c 'source $VENV_PATH && $DAGSTER_COMMAND'
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+EOF
 
 # ╭─────────────────────────────────────────────────────────────╮
-# │ 🔓 ADD FRESH UFW RULES                                      │
+# │ 🔄 RELOAD SYSTEMD AND ENABLE SERVICE                        │
 # ╰─────────────────────────────────────────────────────────────╯
-echo "🔓 [INFO] Adding required UFW rules..."
-
-sudo ufw allow 22/tcp    comment 'Allow SSH'
-sudo ufw allow 3000/tcp  comment 'Allow Grafana'
-sudo ufw allow 9090/tcp  comment 'Allow Prometheus'
-sudo ufw allow 3300/tcp  comment 'Allow Dagster'
-sudo ufw allow 8080/tcp  comment 'Allow DBT Docs'
-sudo ufw allow 5432/tcp  comment 'Allow PostgreSQL'
-sudo ufw allow 3001/tcp  comment 'Allow Metabase'
-
-sudo ufw reload
+echo "🔄 Reloading systemd, enabling, and starting $SERVICE_NAME..."
+systemctl daemon-reload
+systemctl enable "$SERVICE_NAME"
+systemctl restart "$SERVICE_NAME"
 
 # ╭─────────────────────────────────────────────────────────────╮
-# │ 🔄 SERVICE RESTART SECTION                                  │
+# │ 📋 VERIFY STATUS                                            │
 # ╰─────────────────────────────────────────────────────────────╯
-echo "🔁 [INFO] Restarting monitoring and data services..."
+echo "📋 Checking status..."
+systemctl status "$SERVICE_NAME" --no-pager
 
-for SERVICE in grafana-server prometheus metabase postgresql dagster; do
-  echo "⏳ Restarting $SERVICE..."
-  sudo systemctl restart "$SERVICE" || echo "⚠️  Warning: Service $SERVICE failed to restart"
-done
-
-# ╭─────────────────────────────────────────────────────────────╮
-# │ ✅ FINAL VERIFICATION                                       │
-# ╰─────────────────────────────────────────────────────────────╯
-echo "📋 [INFO] Firewall status:"
-sudo ufw status verbose
-
-echo "✅ [SUCCESS] Firewall configured and services restarted."
+# 🎉 Done!
+echo "✅ Dagster systemd service installed and running on port 3300."
