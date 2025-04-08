@@ -1,7 +1,7 @@
 Raspberry Pi Bare-Metal Stack – Setup Walkthrough (Confirmed Steps)
 
-This guide walks through how to configure a Raspberry Pi running Pi OS Lite to use GitHub and SSH properly with a working setup. All steps below have been tested and verified.
-
+This guide walks through how to configure a Raspberry Pi running Pi OS Lite to use GitHub 
+and SSH properly with a working setup. All steps below have been tested and verified.
 ---
 
 Part 1: Run from Your Laptop (Windows)
@@ -90,24 +90,24 @@ Notes
 - Scripts follow PiosHarden.sh style: headers, checklist icons, clean formatting
 - This guide is designed to be fully automatable in a future full-stack script
 
+#### Pipelines ####
+Bronze ingest of water qaulity csv sample data:
 
-### Old Version
-- Flash Pi OS Lite to MicroSD
-- Add a blank ssh file
-- BasicPiOSTools.sh 
-- PiOSHarden.sh
-- gitBootStrap.sh
-- Setup .gitignore?
-- Setup vs code token/pass phrase
-- mkdir ~/scr
-- Pull git/RPi5 into ~/scr
-- Install Postgres
-- grafanaDemoInstall.sh
-- Add prometheus data source in grafana
-- Install Metabase
-- firewallConfig.sh
-- Water Quality Sample Data 
-- IIOT Sample Data
+~/dagster_proj/
+├── my_repo/
+│   ├── assets/
+│   │   └── bronze_ingest.py        # Where your Dagster @asset will live
+│   └── __init__.py
+├── data/
+│   ├── wq_sample.csv
+│   └── energy_sample.csv
+├── venv/
+└── workspace.yaml
+
+
+
+
+
 
 # README folder structure
 scr/
