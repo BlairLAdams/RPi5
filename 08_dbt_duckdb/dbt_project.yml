@@ -1,0 +1,4 @@
+name: wq_duckdb
+profile: wq_duck
+model-paths: ["models"]
+
