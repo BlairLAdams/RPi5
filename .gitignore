@@ -1,11 +1,22 @@
-*/venv/
-.venv/
-**/target/
-**/dbt_packages/
+# 🐍 Python artifacts
 __pycache__/
 *.pyc
 *.log
 *.tmp
 *.bak
+
+# 🚫 Virtual environments (any depth)
+venv/
+*/venv/
+.venv/
+
+# 🚫 Data artifacts
 *.parquet
 *.csv
+
+# 📦 Build/package/dependency folders
+**/target/
+**/dbt_packages/
+
+# 👻 OS/editor system junk
+.DS_Store
