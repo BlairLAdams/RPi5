@@ -1,0 +1,14 @@
+name: bronze_dbt
+version: '1.0'
+profile: wq_pg
+
+model-paths: ["models"]
+target-path: "target"
+clean-targets: ["target"]
+
+models:
+  bronze_dbt:
+    +schema: bronze
+    bronze:
+      materialized: view
+
