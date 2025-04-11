@@ -1,0 +1,4 @@
+load_from:
+  - python_file: bronze_assets.py
+  - python_file: bronze_job.py
+  - python_file: sensors.py
