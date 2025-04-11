@@ -35,6 +35,7 @@ sudo ufw allow 3300/tcp  comment 'Allow Dagster'
 sudo ufw allow 8080/tcp  comment 'Allow DBT Docs'
 sudo ufw allow 5432/tcp  comment 'Allow PostgreSQL'
 sudo ufw allow 3001/tcp  comment 'Allow Metabase'
+sudo ufw allow 5001/tcp  comment 'Alertmanager webhook receiver'
 
 sudo ufw reload
 

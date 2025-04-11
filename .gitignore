@@ -1,19 +1,11 @@
-# OS files
-.DS_Store
-Thumbs.db
-
-# Editor/IDE artifacts
-*.swp
-*.swo
-*.bak
-*.tmp
-*~
-
-# Python cache
+*/venv/
+.venv/
+**/target/
+**/dbt_packages/
 __pycache__/
 *.pyc
-
-# Log or runtime files
 *.log
-*.pid
-
+*.tmp
+*.bak
+*.parquet
+*.csv
