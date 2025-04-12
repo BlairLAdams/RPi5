@@ -1,3 +1,6 @@
+# ✅ Filename: pyproject.toml
+# 📦 Purpose: Register bronze_file_sensor as Dagster module
+
 [tool.dagster]
-module_name = "wq_pipeline"
+module_name = "bronze_file_sensor"
 

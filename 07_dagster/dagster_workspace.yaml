@@ -1,4 +1,5 @@
+# ✅ Filename: dagster_workspace.yaml
+# 📦 Purpose: Load Dagster repository from Definitions-based module (__init__.py)
+
 load_from:
-  - python_file: bronze_assets.py
-  - python_file: bronze_job.py
-  - python_file: sensors.py
+  - python_module: scr.07_dagster

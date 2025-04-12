@@ -1,0 +1,3 @@
+[tool.dagster]
+module_name = "wq_pipeline"
+
