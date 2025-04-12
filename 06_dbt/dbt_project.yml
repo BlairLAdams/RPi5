@@ -1,14 +1,13 @@
-name: bronze_dbt
-version: '1.0'
-profile: wq_pg
+# ✅ Filename: dbt_project.yml
+# 📦 Purpose: Aligns with the 'metadb' profile in ~/.dbt/profiles.yml
 
-model-paths: ["models"]
-target-path: "target"
-clean-targets: ["target"]
+name: bronze_dbt
+version: "1.0"
+profile: metadb  # 🔧 fixed from 'default' to 'metadb'
+
+model-paths: ["models"]  # 🔧 renamed from deprecated 'source-paths'
 
 models:
   bronze_dbt:
-    +schema: bronze
-    bronze:
-      materialized: view
+    +schema: public_bronze
 

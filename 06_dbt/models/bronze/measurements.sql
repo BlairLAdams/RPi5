@@ -1,3 +1,6 @@
--- Bronze pass-through model of measurements
-SELECT * FROM bronze.lab_results
+-- ✅ Filename: bronze/measurements.sql
+-- 📦 Purpose: Simple passthrough or filtered views of actual bronze-layer data
+
+-- Example 1: Mirror water_quality as-is
+select * from {{ source('bronze', 'water_quality') }}
 

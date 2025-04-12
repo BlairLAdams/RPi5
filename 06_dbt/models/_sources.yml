@@ -1,0 +1,12 @@
+# ✅ Filename: models/_sources.yml
+# 📦 Purpose: Register bronze-layer Postgres tables as sources
+
+version: 2
+
+sources:
+  - name: bronze
+    database: postgres
+    schema: bronze
+    tables:
+      - name: water_quality
+      - name: energy_use
