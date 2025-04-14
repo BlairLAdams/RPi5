@@ -20,3 +20,4 @@ venv/
 
 # 👻 OS/editor system junk
 .DS_Store
+07_dagster/history/runs.db
