@@ -1,2 +1,3 @@
-Raspberry Pi 5, 16GB RAM, 64-bit Quad-Core CPU, 64Gb MicroSD 
-Low Cost Bare-Metal Open Source Data Analytics Platform Experiments 
+Inexpensive Experiments in Open Source Data Analytics
+Hardware: Raspberry Pi 5, 16GB RAM, 64-bit Quad-Core CPU, 64Gb MicroSD
+Software: Pi OS Lite (Bookworm), VS Code, Git, Python, Postgres, Node_exporter, Prometheus, dbt, Dragster, Grafeana, and Metabase
