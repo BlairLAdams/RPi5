@@ -21,3 +21,12 @@ venv/
 # 👻 OS/editor system junk
 .DS_Store
 07_dagster/history/runs.db
+07_dagster/.tmp_dagster_home_ac7xz79h/history/runs.db
+07_dagster/.tmp_dagster_home_ac7xz79h/history/runs.db
+07_dagster/.tmp_dagster_home_ac7xz79h/history/runs.db
+.gitignore
+07_dagster/water_quality/.tmp_dagster_home_1k1ihiib/history/runs/index.db
+07_dagster/water_quality/.tmp_dagster_home_1k1ihiib/schedules/schedules.db
+07_dagster/.tmp_dagster_home_ac7xz79h/history/runs.db
+.gitignore
+07_dagster/water_quality/.tmp_dagster_home_844h0aov/schedules/schedules.db

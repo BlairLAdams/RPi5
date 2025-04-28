@@ -1,9 +1,7 @@
-from dagster import Definitions, load_assets_from_modules
-
-from water_quality import assets  # noqa: TID252
-
-all_assets = load_assets_from_modules([assets])
+from dagster import Definitions
+from .wq_pipeline import load_bronze_wq, run_dbt
 
 defs = Definitions(
-    assets=all_assets,
+    assets=[load_bronze_wq, run_dbt],
 )
+
