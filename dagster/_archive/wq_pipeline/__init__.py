@@ -1,2 +1,0 @@
-from .repositories import defs
-

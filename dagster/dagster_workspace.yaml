@@ -1,5 +1,0 @@
-# ✅ Filename: dagster_workspace.yaml
-# 📦 Purpose: Load Dagster repository from Definitions-based module (__init__.py)
-
-load_from:
-  - python_module: scr.07_dagster
