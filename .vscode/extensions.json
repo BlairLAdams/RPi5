@@ -1,3 +1,30 @@
 {
-    "recommendations": []
-}
+    // Only show relevant files in Explorer
+    "files.exclude": {
+      "**/*.db": true,
+      "**/*.db.*": true,
+      "**/*.log": true,
+      "**/__pycache__": true,
+      "**/logs": true,
+      "**/target": true,
+      "**/venv": true,
+      "**/.tmp_*": true,
+      "**/.DS_Store": true,
+      "**/scr_backup_*": true
+    },
+  
+    // Don't let Git show ignored files
+    "git.excludeIgnored": true,
+  
+    // Only one repo (scr) should be detected
+    "git.autoRepositoryDetection": "subFolders",
+  
+    // Silence Python virtual env suggestions
+    "python.terminal.activateEnvironment": false,
+  
+    // Optional: Hide .vscode from file tree to avoid edits
+    "files.exclude": {
+      "**/.vscode": true
+    }
+  }
+  
