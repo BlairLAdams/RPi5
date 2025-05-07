@@ -1,6 +1,6 @@
 name: Task
 description: Standard task for Kanban/project tracking
-title: "[Task]: "
+title: ""
 labels: [Task, To Do]
 assignees: []
 body:
