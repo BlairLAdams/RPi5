@@ -1,0 +1,58 @@
+name: Task
+description: Standard task for Kanban/project tracking
+title: "[Task]:"
+labels: [Task, To Do]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### 📌 Task Summary
+
+        Please describe the task clearly and succinctly. Use action verbs.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What needs to be done?
+      placeholder: "Implement login validation for incorrect password error"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - High
+        - Medium
+        - Low
+      default: 1
+
+  - type: input
+    id: due
+    attributes:
+      label: Due Date
+      placeholder: "YYYY-MM-DD (optional)"
+    validations:
+      required: false
+
+  - type: input
+    id: related
+    attributes:
+      label: Related Issues or PRs
+      placeholder: "#12, #55"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: definition-of-done
+    attributes:
+      label: Definition of Done
+      description: What must be true before this task is considered complete?
+      options:
+        - label: Code is committed and reviewed
+        - label: Unit tests are written and passing
+        - label: Documentation is updated
+        - label: Deployed or merged to `main`
