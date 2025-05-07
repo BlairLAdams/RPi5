@@ -33,6 +33,7 @@ dagster_bak/
 # Metabase database artifacts
 metabase/*.mv.db
 metabase/*.trace.db
+*.jar
 
 # DBT artifacts
 dbt/logs/
