@@ -18,7 +18,7 @@ body:
       description: What needs to be done?
       placeholder: "Implement login validation for incorrect password error"
     validations:
-      required: true
+      required: false
 
   - type: dropdown
     id: priority
