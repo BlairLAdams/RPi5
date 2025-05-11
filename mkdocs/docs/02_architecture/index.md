@@ -1,3 +1,5 @@
+*Home > DMBOK > Data Architecture*
+
 # Data Architecture
 
 [Data Architecture](../glossary.md#data-architecture) defines the blueprint for how data is structured, stored, and integrated across systems.  

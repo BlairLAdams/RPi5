@@ -1,3 +1,5 @@
+*Home > DMBOK > Data Warehousing and Business Intelligence*
+
 # Data Warehousing and Business Intelligence
 
 The [Enterprise Data Warehouse (EDW)](../glossary.md#data-warehouse-edw) is a central platform that consolidates cleaned, structured data from multiple systems to support analytics and reporting.  

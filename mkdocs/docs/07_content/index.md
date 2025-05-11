@@ -1,3 +1,5 @@
+*Home > DMBOK > Document and Content Management*
+
 # Document and Content Management
 
 [Document and Content Management](../glossary.md#document-and-content-management) governs unstructured content such as reports, SOPs, drawings, PDFs, and inspection photos.  
