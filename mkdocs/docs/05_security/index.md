@@ -7,36 +7,8 @@ As integration increases across [line of business systems](../glossary.md#line-o
 Security is more than firewalls — it includes [access control](../glossary.md#access-control), data classification, audit trails,  
 and governance policies enforced through collaboration between IT and data stewards.
 
----
-
-## Objective
-
-Establish security practices that protect data confidentiality, integrity, and availability across integrated systems and storage.
 
 ---
 
-### Key Results
-
-- Define user roles and [access controls](../glossary.md#access-control) for core datasets  
-- Enable secure authentication for shared systems (e.g., dashboards, EDW)  
-- Publish data classification levels (e.g., confidential, internal, public) and handling guidelines  
-- Assign security stewardship responsibilities for at least one dataset  
-
----
-
-## Core Processes
-
-- Role-based [access control](../glossary.md#access-control) provisioning  
-- Audit logging and change tracking  
-- Sensitive data classification  
-- Integration of security reviews into [governance](../glossary.md#data-governance) workflows  
-- Risk mitigation and policy exception reviews  
-
----
-
-## Suggested Metrics
-
-- Number of datasets with role-based access policies  
-- Frequency of access audits or recertifications  
-- Percentage of datasets with security classification tags  
-- Time to revoke access after a user role change
+**← Previous:** [Data Storage and Operations](../04_storage/index.md)
+**Next:** [Data Integration and Interoperability](../06_integration/index.md)

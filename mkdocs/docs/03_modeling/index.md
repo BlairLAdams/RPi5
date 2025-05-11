@@ -7,36 +7,8 @@ Models provide a shared language that supports consistency in analysis, [data qu
 Early modeling efforts typically produce [data dictionaries](../glossary.md#data-dictionary), conceptual diagrams, and help align definitions across teams.  
 Validated models also support [metadata](../glossary.md#metadata), [stewardship](../glossary.md#stewardship), and downstream [data marts](../glossary.md#data-mart).
 
----
-
-## Objective
-
-Define and document reusable [data models](../glossary.md#data-modeling) that reflect key entities and support analytics across departments.
 
 ---
 
-### Key Results
-
-- Draft an entity-relationship diagram for three priority domains  
-- Publish a [data dictionary](../glossary.md#data-dictionary) with field types and definitions  
-- Align one shared metric across multiple departments (e.g., downtime or repair backlog)  
-- Review models with both stewards and system owners  
-
----
-
-## Core Processes
-
-- Conceptual and logical model design  
-- Definition and approval of terms and relationships  
-- Metadata and glossary linkage  
-- Crosswalk creation for [reference data](../glossary.md#reference-data) and codes  
-- Model version control
-
----
-
-## Suggested Metrics
-
-- Number of reviewed and published data models  
-- Coverage of EDW tables linked to approved models  
-- Count of definitions reused across dashboards  
-- Frequency of model review or updates
+**← Previous:** [Data Architecture](../02_architecture/index.md)
+**Next:** [Data Storage and Operations](../04_storage/index.md)
