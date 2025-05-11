@@ -6,6 +6,22 @@ __pycache__/
 *.bak
 *.db
 
+# MkDocs build output
+/mkdocs/site/
+!/mkdocs/docs/
+
+# dbt artifacts
+/dbt/target/
+/dbt/dbt_packages/
+/dbt/logs/
+
+# Backup or OS junk
+*.log
+*.pyc
+__pycache__/
+.DS_Store
+.env
+
 # Virtual environments (any depth)
 venv/
 */venv/
