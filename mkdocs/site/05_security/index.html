@@ -317,6 +317,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Data Security
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -328,6 +341,67 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objective
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Objective">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Results
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Processes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suggested-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Suggested Metrics
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -543,6 +617,56 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objective
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Objective">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Results
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Processes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suggested-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Suggested Metrics
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -560,12 +684,39 @@
 <p><em>Home &gt; DMBOK &gt; Data Security</em></p>
 <h1 id="data-security">Data Security</h1>
 <p>Data security protects sensitive information from unauthorized access, misuse, or loss.<br />
-In a water utility, this includes securing SCADA telemetry, <a href="../glossary/#reference-data">reference data</a>, and operational records managed in the <a href="../glossary/#data-warehouse-edw">Enterprise Data Warehouse</a>.<br />
-As integration increases across <a href="../glossary/#line-of-business-system">line of business systems</a>, strong security practices are essential to reduce risk and maintain trust.</p>
-<p>Security is more than firewalls — it includes <a href="../glossary/#access-control">access control</a>, data classification, audit trails,<br />
-and governance policies enforced through collaboration between IT and data stewards.</p>
+In a water utility, this includes securing operational telemetry, <a href="../glossary/#reference-data">reference data</a>, and system-generated records managed in the <a href="../glossary/#data-warehouse-edw">Enterprise Data Warehouse</a>.<br />
+Strong security practices are essential to reduce risk and maintain trust as data is shared across departments and platforms.</p>
+<p>Security involves <a href="../glossary/#access-control">access control</a>, data classification, audit trails, and <a href="../glossary/#data-governance">data governance</a> policies that are enforced consistently by stewards and IT administrators.</p>
 <hr />
-<p><strong>← Previous:</strong> <a href="../04_storage/">Data Storage and Operations</a>
+<h2 id="objective">Objective</h2>
+<p>Establish security practices that protect data confidentiality, integrity, and availability across integrated systems and storage.</p>
+<hr />
+<h3 id="key-results">Key Results</h3>
+<ul>
+<li>Define user roles and <a href="../glossary/#access-control">access control</a> for core datasets  </li>
+<li>Enable secure authentication and role alignment for dashboards and EDW  </li>
+<li>Publish data classification levels and handling guidelines  </li>
+<li>Assign security stewardship responsibilities for one or more data domains  </li>
+</ul>
+<hr />
+<h2 id="core-processes">Core Processes</h2>
+<ul>
+<li>Role-based <a href="../glossary/#access-control">access control</a> provisioning  </li>
+<li>Audit logging and change tracking  </li>
+<li>Sensitive data classification and documentation  </li>
+<li>Security impact reviews within <a href="../glossary/#data-governance">governance</a> workflows  </li>
+<li>Risk mitigation and exception handling  </li>
+</ul>
+<hr />
+<h2 id="suggested-metrics">Suggested Metrics</h2>
+<ul>
+<li>Percentage of datasets with documented access controls  </li>
+<li>Number of audit events reviewed per quarter  </li>
+<li>Frequency of user access reviews or role changes  </li>
+<li>Coverage of data classification tagging across EDW</li>
+</ul>
+<hr />
+<p><strong>← Previous:</strong> <a href="../04_storage/">Data Storage and Operations</a><br />
 <strong>Next:</strong> <a href="../06_integration/">Data Integration and Interoperability</a></p>
 
 
@@ -587,7 +738,7 @@ and governance policies enforced through collaboration between IT and data stewa
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 11, 2025 03:20:23">May 11, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 11, 2025 04:04:22">May 11, 2025</span>
   </span>
 
     

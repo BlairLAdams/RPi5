@@ -455,6 +455,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Data Quality
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -466,6 +479,67 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objective
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Objective">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Results
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Processes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suggested-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Suggested Metrics
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -543,6 +617,56 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objective
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Objective">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Results
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Processes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suggested-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Suggested Metrics
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -559,12 +683,38 @@
 
 <p><em>Home &gt; DMBOK &gt; Data Quality</em></p>
 <h1 id="data-quality">Data Quality</h1>
-<p><a href="../glossary/#data-quality">Data Quality</a> ensures that data is accurate, complete, timely, and consistent enough to support operations, analysis, and reporting.<br />
-In a water utility, poor data quality might lead to missed maintenance, incorrect regulatory reporting, or misinformed capital planning.<br />
-Effective data quality programs rely on <a href="../glossary/#stewardship">data stewardship</a>, well-defined <a href="../glossary/#validation-rule">validation rules</a>,<br />
-and clear communication between IT, engineering, operations, and compliance teams.</p>
-<p>Quality issues should be tracked, prioritized, and resolved — not just discovered after the fact. Over time, mature utilities use <a href="../glossary/#metrics">metrics</a><br />
-and <a href="../glossary/#critical-data-element">critical data elements</a> to focus their efforts and measure impact.</p>
+<p><a href="../glossary/#data-quality">Data Quality</a> ensures that data is accurate, complete, timely, and consistent enough to support operations, reporting, and decision-making.<br />
+In a water utility, poor data quality can lead to incorrect work orders, delayed compliance reports, or misinformed capital investments.<br />
+A proactive quality program helps identify and fix issues early — often by combining <a href="../glossary/#stewardship">stewardship</a>, monitoring, and feedback loops.</p>
+<p>Data quality also plays a key role in adoption. When staff trust the data, they use it more consistently and effectively.</p>
+<hr />
+<h2 id="objective">Objective</h2>
+<p>Monitor and improve <a href="../glossary/#data-quality">data quality</a> by defining rules, assigning stewards, and resolving issues in a transparent, documented way.</p>
+<hr />
+<h3 id="key-results">Key Results</h3>
+<ul>
+<li>Define <a href="../glossary/#validation-rule">validation rules</a> for three datasets (e.g., no missing runtimes, valid codes)  </li>
+<li>Assign <a href="../glossary/#data-steward">data stewards</a> to monitor and respond to flagged issues  </li>
+<li>Create a backlog of known issues with status and owner  </li>
+<li>Implement anomaly checks on at least one time-series dataset  </li>
+</ul>
+<hr />
+<h2 id="core-processes">Core Processes</h2>
+<ul>
+<li><a href="../glossary/#data-profiling">Data profiling</a> and rule creation  </li>
+<li>Issue triage, root cause analysis, and correction  </li>
+<li>Governance review for systemic problems  </li>
+<li>Feedback loops with data producers and stewards  </li>
+<li>Documentation and revision of <a href="../glossary/#validation-rule">validation rules</a>  </li>
+</ul>
+<hr />
+<h2 id="suggested-metrics">Suggested Metrics</h2>
+<ul>
+<li>Percentage of records passing validation rules  </li>
+<li>Number of unresolved issues over 30 days old  </li>
+<li>Time-to-resolve for high-priority errors  </li>
+<li>Data quality score by table, steward, or refresh</li>
+</ul>
 <hr />
 <p><strong>← Previous:</strong> <a href="../10_metadata/">Metadata Management</a></p>
 
@@ -587,7 +737,7 @@ and <a href="../glossary/#critical-data-element">critical data elements</a> to f
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 11, 2025 03:20:23">May 11, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 11, 2025 04:04:22">May 11, 2025</span>
   </span>
 
     

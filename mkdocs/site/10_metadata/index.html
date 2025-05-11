@@ -432,6 +432,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Metadata Management
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -443,6 +456,67 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objective
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Objective">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Results
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Processes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suggested-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Suggested Metrics
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -543,6 +617,56 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objective
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Objective">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Results
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Processes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suggested-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Suggested Metrics
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -559,14 +683,40 @@
 
 <p><em>Home &gt; DMBOK &gt; Metadata Management</em></p>
 <h1 id="metadata-management">Metadata Management</h1>
-<p><a href="../glossary/#metadata">Metadata</a> describes data’s origin, meaning, format, steward, and update schedule.<br />
-In a water utility, it helps teams understand what a field like “runtime hours” or “asset status” means — and where it comes from.<br />
-Strong metadata practices enable <a href="../glossary/#stewardship">data stewardship</a>, <a href="../glossary/#data-quality">data quality</a>, and <a href="../glossary/#data-literacy">self-service analytics</a><br />
-by giving users visibility into the structure, source, and purpose of datasets.</p>
-<p>Metadata is captured in tools such as <a href="../glossary/#data-dictionary">data dictionaries</a>, <a href="../glossary/#business-glossary">business glossaries</a>,<br />
-and catalog indexes of <a href="../glossary/#data-pipeline">data pipelines</a> and table owners.</p>
+<p><a href="../glossary/#metadata">Metadata</a> describes the structure, meaning, source, stewardship, and lifecycle of data.<br />
+In a water utility, it helps teams understand what a field like “runtime hours” means, who owns it, and when it was last updated — providing the context behind every dataset.<br />
+Strong metadata practices support <a href="../glossary/#stewardship">data stewardship</a>, enable <a href="../glossary/#data-governance">data governance</a>, and reduce onboarding time for new analysts or engineers.</p>
+<p>Metadata may include field descriptions, data dictionaries, <a href="../glossary/#business-glossary">business glossary</a> terms, <a href="../glossary/#data-pipeline">data pipeline</a> refresh schedules, and source-to-target documentation.</p>
 <hr />
-<p><strong>← Previous:</strong> <a href="../09_warehousing/">Data Warehousing and Business Intelligence</a>
+<h2 id="objective">Objective</h2>
+<p>Document and publish <a href="../glossary/#metadata">metadata</a> for priority datasets to support transparency, trust, and self-service analytics.</p>
+<hr />
+<h3 id="key-results">Key Results</h3>
+<ul>
+<li>Publish metadata for 10 EDW tables, including owner, refresh timing, and descriptions  </li>
+<li>Define 15 key business terms in a shared <a href="../glossary/#business-glossary">business glossary</a>  </li>
+<li>Tag 5 datasets with criticality and <a href="../glossary/#system-of-record">system of record</a> status  </li>
+<li>Assign metadata stewardship responsibilities  </li>
+</ul>
+<hr />
+<h2 id="core-processes">Core Processes</h2>
+<ul>
+<li>Metadata capture during ingestion and modeling  </li>
+<li><a href="../glossary/#data-dictionary">Data dictionary</a> and glossary publishing  </li>
+<li>Field-level tagging with source system and steward  </li>
+<li>Change tracking for schema and pipeline metadata  </li>
+<li>Stewardship review and documentation update cycles  </li>
+</ul>
+<hr />
+<h2 id="suggested-metrics">Suggested Metrics</h2>
+<ul>
+<li>Percentage of EDW tables with complete <a href="../glossary/#metadata">metadata</a>  </li>
+<li>Number of business glossary terms with steward and approval  </li>
+<li>Metadata search activity or pageviews  </li>
+<li>Frequency of metadata updates vs. data refresh schedule</li>
+</ul>
+<hr />
+<p><strong>← Previous:</strong> <a href="../09_warehousing/">Data Warehousing and Business Intelligence</a><br />
 <strong>Next:</strong> <a href="../11_quality/">Data Quality</a></p>
 
 
@@ -588,7 +738,7 @@ and catalog indexes of <a href="../glossary/#data-pipeline">data pipelines</a> a
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 11, 2025 03:20:23">May 11, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 11, 2025 04:04:22">May 11, 2025</span>
   </span>
 
     

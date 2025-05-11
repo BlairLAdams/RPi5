@@ -386,6 +386,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Reference and Master Data
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -397,6 +410,67 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objective
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Objective">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Results
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Processes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suggested-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Suggested Metrics
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -543,6 +617,56 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objective
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Objective">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Results
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Processes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suggested-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Suggested Metrics
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -559,13 +683,41 @@
 
 <p><em>Home &gt; DMBOK &gt; Reference and Master Data</em></p>
 <h1 id="reference-and-master-data">Reference and Master Data</h1>
-<p><a href="../glossary/#master-data">Reference and Master Data</a> represent stable, shared values used across multiple systems and departments.<br />
-In a water utility, this may include analyte codes, facility IDs, pipe material types, pressure zones, or asset classifications.<br />
-These values must be consistent across <a href="../glossary/#line-of-business-system">line of business systems</a> such as SCADA, CMMS, GIS, and billing.</p>
-<p>Managing <a href="../glossary/#reference-data">reference data</a> involves publishing standards, assigning stewards, and enforcing version control.<br />
-<a href="../glossary/#master-data">Master data</a> often maps to key identifiers like location, asset, or customer, and typically has a designated <a href="../glossary/#system-of-record">system of record</a>.</p>
+<p><a href="../glossary/#master-data">Reference and Master Data</a> are shared values and entities used across multiple systems and business processes.<br />
+In a water utility, this may include zone codes, facility names, pipe materials, analyte lists, and asset classifications.<br />
+These data types often form the backbone of integration efforts and are critical for aligning reporting and operations.</p>
+<p><a href="../glossary/#reference-data">Reference data</a> values are typically finite and stable (e.g., unit types, regions),<br />
+while <a href="../glossary/#master-data">master data</a> refers to key business entities like stations, customers, or assets with lifecycle status and <a href="../glossary/#system-of-record">system of record</a> designations.</p>
 <hr />
-<p><strong>← Previous:</strong> <a href="../07_content/">Document and Content Management</a>
+<h2 id="objective">Objective</h2>
+<p>Publish and maintain stewarded <a href="../glossary/#reference-data">reference</a> and <a href="../glossary/#master-data">master data</a> values to support integration, consistency, and reporting.</p>
+<hr />
+<h3 id="key-results">Key Results</h3>
+<ul>
+<li>Identify three priority domains (e.g., assets, analytes, pressure zones) with assigned stewards  </li>
+<li>Publish one <a href="../glossary/#reference-data">reference dataset</a> to a shared environment (e.g., EDW or reporting tool)  </li>
+<li>Designate a <a href="../glossary/#system-of-record">system of record</a> for each dataset  </li>
+<li>Document value crosswalks between two systems using the same domain  </li>
+</ul>
+<hr />
+<h2 id="core-processes">Core Processes</h2>
+<ul>
+<li>Stewardship assignment by domain  </li>
+<li>Reference value curation and approval  </li>
+<li><a href="../glossary/#metadata">Metadata</a> tagging for business context and refresh frequency  </li>
+<li>Change control for master data updates  </li>
+<li>Documentation of value mappings and exceptions  </li>
+</ul>
+<hr />
+<h2 id="suggested-metrics">Suggested Metrics</h2>
+<ul>
+<li>Number of domains with documented <a href="../glossary/#master-data">master data</a>  </li>
+<li>Percentage of dashboards using certified reference values  </li>
+<li>Time-to-update for code tables and dropdown lists  </li>
+<li>Number of system conflicts resolved via reference alignment</li>
+</ul>
+<hr />
+<p><strong>← Previous:</strong> <a href="../07_content/">Document and Content Management</a><br />
 <strong>Next:</strong> <a href="../09_warehousing/">Data Warehousing and Business Intelligence</a></p>
 
 
@@ -587,7 +739,7 @@ These values must be consistent across <a href="../glossary/#line-of-business-sy
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 11, 2025 03:20:23">May 11, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 11, 2025 04:04:22">May 11, 2025</span>
   </span>
 
     

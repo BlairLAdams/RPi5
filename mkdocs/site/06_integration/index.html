@@ -340,6 +340,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Data Integration and Interoperability
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -351,6 +364,67 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objective
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Objective">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Results
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Processes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suggested-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Suggested Metrics
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -543,6 +617,56 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objective
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Objective">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Results
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Processes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suggested-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Suggested Metrics
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -559,13 +683,41 @@
 
 <p><em>Home &gt; DMBOK &gt; Data Integration and Interoperability</em></p>
 <h1 id="data-integration-and-interoperability">Data Integration and Interoperability</h1>
-<p><a href="../glossary/#data-integration">Data Integration</a> brings together data from multiple systems to form a consistent, unified view.<br />
-In a water utility, this may include integrating SCADA and CMMS work orders or combining <a href="../glossary/#reference-data">reference data</a> across departments.<br />
-Interoperability ensures that systems can exchange data reliably and on schedule.</p>
-<p>An integrated architecture supports <a href="../glossary/#data-quality">data quality</a>, <a href="../glossary/#metadata">metadata</a>, and analytics by making data more accessible and standardized.<br />
-The early focus is on establishing <a href="../glossary/#data-pipeline">data pipelines</a> that are documented, monitored, and stewarded.</p>
+<p><a href="../glossary/#data-integration">Data Integration</a> connects data across systems to provide a unified, consistent view of operations and performance.<br />
+In a water utility, this often means pulling data from field systems, work management tools, or lab results into an <a href="../glossary/#data-warehouse-edw">Enterprise Data Warehouse</a> for analysis and reporting.<br />
+Good integration practices ensure data is accurate, up-to-date, and traceable to its <a href="../glossary/#system-of-record">system of record</a>.</p>
+<p>As more systems connect, <a href="../glossary/#metadata">metadata</a> and <a href="../glossary/#data-quality">data quality</a> become central to understanding how values relate,<br />
+while stewards and architects play a key role in defining and reviewing <a href="../glossary/#data-pipeline">data pipelines</a>.</p>
 <hr />
-<p><strong>← Previous:</strong> <a href="../05_security/">Data Security</a>
+<h2 id="objective">Objective</h2>
+<p>Deploy stewarded <a href="../glossary/#data-pipeline">data pipelines</a> and integration logic that connects operational data to analytics environments in a transparent and traceable way.</p>
+<hr />
+<h3 id="key-results">Key Results</h3>
+<ul>
+<li>Deploy and document two active integrations with refresh schedules  </li>
+<li>Assign stewards to monitor integration inputs and exceptions  </li>
+<li>Publish one flow diagram showing end-to-end movement from source to EDW  </li>
+<li>Resolve one field-level inconsistency using <a href="../glossary/#reference-data">reference data</a></li>
+</ul>
+<hr />
+<h2 id="core-processes">Core Processes</h2>
+<ul>
+<li>Source system analysis and data mapping  </li>
+<li><a href="../glossary/#metadata">Metadata</a> capture for integrated datasets  </li>
+<li>Pipeline failure monitoring and alerting  </li>
+<li>Change control for schema and format shifts  </li>
+<li>Review of pipeline refresh timing and system impacts  </li>
+</ul>
+<hr />
+<h2 id="suggested-metrics">Suggested Metrics</h2>
+<ul>
+<li>Number of active <a href="../glossary/#data-pipeline">data pipelines</a> feeding the EDW  </li>
+<li>Percentage of pipelines with stewards assigned  </li>
+<li>Time-to-detect and resolve pipeline errors  </li>
+<li>Data freshness (delay from source to EDW availability)</li>
+</ul>
+<hr />
+<p><strong>← Previous:</strong> <a href="../05_security/">Data Security</a><br />
 <strong>Next:</strong> <a href="../07_content/">Document and Content Management</a></p>
 
 
@@ -587,7 +739,7 @@ The early focus is on establishing <a href="../glossary/#data-pipeline">data pip
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 11, 2025 03:20:23">May 11, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 11, 2025 04:04:22">May 11, 2025</span>
   </span>
 
     

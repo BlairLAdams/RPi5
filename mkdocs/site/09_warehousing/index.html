@@ -409,6 +409,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Data Warehousing and Business Intelligence
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -420,6 +433,67 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objective
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Objective">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Results
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Processes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suggested-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Suggested Metrics
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -543,6 +617,56 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objective
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Objective">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Results
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Processes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suggested-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Suggested Metrics
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -559,13 +683,40 @@
 
 <p><em>Home &gt; DMBOK &gt; Data Warehousing and Business Intelligence</em></p>
 <h1 id="data-warehousing-and-business-intelligence">Data Warehousing and Business Intelligence</h1>
-<p>The <a href="../glossary/#data-warehouse-edw">Enterprise Data Warehouse (EDW)</a> is a central platform that consolidates cleaned, structured data from multiple systems to support analytics and reporting.<br />
-In a water utility, this may include combining SCADA, CMMS, GIS, and LIMS data<br />
-into a single environment that supports decision-making, regulatory compliance, and long-term planning.</p>
-<p><a href="../glossary/#business-intelligence-bi">Business Intelligence (BI)</a> tools enable users to explore, visualize, and report on this warehouse data through dashboards and charts.<br />
-This layer builds on <a href="../glossary/#reference-data">reference data</a>, <a href="../glossary/#data-modeling">data modeling</a>, <a href="../glossary/#data-quality">data quality</a>, and <a href="../glossary/#stewardship">stewardship</a> practices.</p>
+<p>The <a href="../glossary/#data-warehouse-edw">Enterprise Data Warehouse (EDW)</a> serves as a central platform for reporting, analytics, and historical analysis.<br />
+It brings together structured, high-quality data from multiple sources — typically operational, regulatory, and administrative — to provide a consistent foundation for decision-making.</p>
+<p><a href="../glossary/#business-intelligence-bi">Business Intelligence (BI)</a> tools allow staff to visualize, explore, and analyze this data in dashboards, charts, and reports.<br />
+Both the EDW and BI layers depend heavily on <a href="../glossary/#reference-data">reference data</a>, <a href="../glossary/#stewardship">data stewardship</a>, and well-defined <a href="../glossary/#data-modeling">data models</a>.</p>
 <hr />
-<p><strong>← Previous:</strong> <a href="../08_masterdata/">Reference and Master Data</a>
+<h2 id="objective">Objective</h2>
+<p>Establish a trusted EDW and BI environment that enables consistent analytics, clear metric definitions, and reliable performance monitoring.</p>
+<hr />
+<h3 id="key-results">Key Results</h3>
+<ul>
+<li>Publish a <a href="../glossary/#data-mart">data mart</a> with conformed dimensions and summary tables  </li>
+<li>Launch three dashboards built from EDW data  </li>
+<li>Align two existing reports to <a href="../glossary/#reference-data">reference data</a> definitions  </li>
+<li>Assign stewards for high-visibility dashboards or KPIs  </li>
+</ul>
+<hr />
+<h2 id="core-processes">Core Processes</h2>
+<ul>
+<li><a href="../glossary/#data-modeling">Data modeling</a> for analytics use cases  </li>
+<li>Dashboard request intake and documentation  </li>
+<li>Metric definition and glossary alignment  </li>
+<li><a href="../glossary/#etl-extract-transform-load">ETL</a> or <a href="../glossary/#elt-extract-load-transform">ELT</a> job monitoring  </li>
+<li>Report usage tracking and version control  </li>
+</ul>
+<hr />
+<h2 id="suggested-metrics">Suggested Metrics</h2>
+<ul>
+<li>Percentage of dashboards built on EDW-certified datasets  </li>
+<li>Number of KPIs with glossary definitions and stewards  </li>
+<li>Report refresh success rate  </li>
+<li>Average time from request to dashboard deployment</li>
+</ul>
+<hr />
+<p><strong>← Previous:</strong> <a href="../08_masterdata/">Reference and Master Data</a><br />
 <strong>Next:</strong> <a href="../10_metadata/">Metadata Management</a></p>
 
 
@@ -587,7 +738,7 @@ This layer builds on <a href="../glossary/#reference-data">reference data</a>, <
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 11, 2025 03:20:23">May 11, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 11, 2025 04:04:22">May 11, 2025</span>
   </span>
 
     
