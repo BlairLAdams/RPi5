@@ -1,0 +1,28 @@
+/* Global centering for all Mermaid diagrams */
+.mermaid {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* Fix Git graph label contrast */
+
+.mermaid .commit-label,
+.mermaid .branch-label,
+.mermaid .tag-label {
+  fill: #ffffff !important;     /* Text color */
+  font-weight: 600 !important;
+}
+
+.mermaid .branch-label-bg,
+.mermaid .tag-label-bg {
+  fill: #3f51b5 !important;     /* Indigo Material Blue background */
+  stroke: #3f51b5 !important;
+}
+
+/* Optional: pad background box size to avoid text cutoffs */
+.mermaid .labelBox {
+  rx: 4;
+  ry: 4;
+}

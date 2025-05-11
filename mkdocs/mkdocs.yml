@@ -21,10 +21,16 @@ nav:
       - Data Warehousing and Business Intelligence: 09_warehousing/index.md
       - Metadata Management: 10_metadata/index.md
       - Data Quality: 11_quality/index.md
+      - DMBOK Glossary: DmbokGlossary.md
 
-  - dbt Docs: dbt_docs/index.html
-  - Contributing: contributing.md
-  - Glossary: glossary.md
+  - Key Concepts:
+    - Performance Terminology: PerformanceTerms.md
+    - Agile Kanban: Kanban.md
+    - Objectives and Key Results: OKRs.md
+    - Design Thinking: DesignThinking.md
+    - Analytics Architectures: Architectures.md
+    - Governance Frameworks: GovernanceFrameworks.md
+    - Mermaid Diagrams: MermaidDiagrams.md
 
 plugins:
   - search
@@ -36,3 +42,17 @@ plugins:
 extra:
   include_last_updated: true
 
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - attr_list
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mermaid@10.4.0/dist/mermaid.min.js
+  - extra.js
+
+extra_css:
+  - stylesheets/mermaid.css
