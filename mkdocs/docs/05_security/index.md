@@ -3,14 +3,46 @@
 # Data Security
 
 Data security protects sensitive information from unauthorized access, misuse, or loss.  
-In a water utility, this includes securing SCADA telemetry, [reference data](../glossary.md#reference-data), and operational records managed in the [Enterprise Data Warehouse](../glossary.md#data-warehouse-edw).  
-As integration increases across [line of business systems](../glossary.md#line-of-business-system), strong security practices are essential to reduce risk and maintain trust.
+In a water utility, this includes securing operational telemetry, [reference data](../glossary.md#reference-data), and system-generated records managed in the [Enterprise Data Warehouse](../glossary.md#data-warehouse-edw).  
+Strong security practices are essential to reduce risk and maintain trust as data is shared across departments and platforms.
 
-Security is more than firewalls — it includes [access control](../glossary.md#access-control), data classification, audit trails,  
-and governance policies enforced through collaboration between IT and data stewards.
-
+Security involves [access control](../glossary.md#access-control), data classification, audit trails, and [data governance](../glossary.md#data-governance) policies that are enforced consistently by stewards and IT administrators.
 
 ---
 
-**← Previous:** [Data Storage and Operations](../04_storage/index.md)
+## Objective
+
+Establish security practices that protect data confidentiality, integrity, and availability across integrated systems and storage.
+
+---
+
+### Key Results
+
+- Define user roles and [access control](../glossary.md#access-control) for core datasets  
+- Enable secure authentication and role alignment for dashboards and EDW  
+- Publish data classification levels and handling guidelines  
+- Assign security stewardship responsibilities for one or more data domains  
+
+---
+
+## Core Processes
+
+- Role-based [access control](../glossary.md#access-control) provisioning  
+- Audit logging and change tracking  
+- Sensitive data classification and documentation  
+- Security impact reviews within [governance](../glossary.md#data-governance) workflows  
+- Risk mitigation and exception handling  
+
+---
+
+## Suggested Metrics
+
+- Percentage of datasets with documented access controls  
+- Number of audit events reviewed per quarter  
+- Frequency of user access reviews or role changes  
+- Coverage of data classification tagging across EDW
+
+---
+
+**← Previous:** [Data Storage and Operations](../04_storage/index.md)  
 **Next:** [Data Integration and Interoperability](../06_integration/index.md)

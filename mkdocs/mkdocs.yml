@@ -1,8 +1,10 @@
 site_name: RPi5 Open Source Analytics Platform
 theme:
   name: material
+  features:
+    - navigation.top
+    - search.highlight
 
-nav:
 nav:
   - Home: index.md
   - DMBOK:
