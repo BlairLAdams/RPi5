@@ -1,25 +1,43 @@
 # Data Quality
-Data quality ensures that the data used across your systems is accurate, complete, timely, and consistent. In a water utility, poor data quality can lead to misleading reports, operational delays, or non-compliance.   Field readings may be miskeyed, sensor data may go missing, or asset records might be duplicated — but with clear expectations, monitoring, and stewardship, these issues can be surfaced and corrected before they cause downstream impacts.
-Data quality is a continuous discipline — not about perfection, but about making sure the data is good enough to support your decisions and services. Early efforts often focus on understanding known issues, defining quality dimensions, and starting lightweight monitoring for a few critical fields.
+
+[Data Quality](../glossary.md#data-quality) ensures that data is accurate, complete, timely, and consistent enough to support operations, analysis, and reporting.  
+In a water utility, poor data quality might lead to missed maintenance, incorrect regulatory reporting, or misinformed capital planning.  
+Effective data quality programs rely on [data stewardship](../glossary.md#stewardship), well-defined [validation rules](../glossary.md#validation-rule),  
+and clear communication between IT, engineering, operations, and compliance teams.
+
+Quality issues should be tracked, prioritized, and resolved — not just discovered after the fact. Over time, mature utilities use [metrics](../glossary.md#metrics)  
+and [critical data elements](../glossary.md#critical-data-element) to focus their efforts and measure impact.
+
+---
 
 ## Objective
-Establish expectations, ownership, and monitoring for the accuracy and completeness of key datasets that feed operational and analytical processes.
+
+Improve the reliability of core datasets by establishing roles, rules, and workflows for ongoing [data quality](../glossary.md#data-quality) monitoring and improvement.
+
+---
 
 ### Key Results
-- Define quality rules (e.g., required fields, valid ranges) for three priority datasets  
-- Assign data quality stewards or custodians for each dataset  
-- Log known quality issues and resolutions in a shared backlog or tracking sheet  
-- Set up basic monitoring or alerts for missing/invalid values in one dataset  
+
+- Define [validation rules](../glossary.md#validation-rule) for three datasets (e.g., no null runtimes, valid facility codes)  
+- Assign [data stewards](../glossary.md#data-steward) to monitor and triage quality issues  
+- Create a backlog of known issues with resolution status  
+- Implement basic anomaly checks on one time-series dataset  
+
+---
 
 ## Core Processes
-- Rule definition and validation criteria (e.g., no nulls, valid codes)  
-- Issue identification, logging, and triage  
-- Resolution workflow and ownership handoff  
-- Data profiling and exception reporting  
-- Quality assurance integration into ETL or ingestion  
+
+- [Data profiling](../glossary.md#data-profiling) and issue identification  
+- Rule-based monitoring and alerting  
+- Quality issue triage and assignment  
+- Resolution tracking and root cause analysis  
+- Coordination with [governance](../glossary.md#data-governance) and source system teams  
+
+---
 
 ## Suggested Metrics
-- Percent of records passing defined quality checks  
-- Number of open vs resolved quality issues  
-- Mean time to resolve a logged data issue  
-- Frequency of quality rule violations per table
+
+- Percentage of records passing validation rules  
+- Number of open vs. resolved quality issues  
+- Time-to-resolve for critical issues  
+- Frequency of repeated rule violations by table

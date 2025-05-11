@@ -1,24 +1,42 @@
 # Reference and Master Data
-Reference and master data represent the stable, high-value data elements that provide consistency across systems. For water utilities, this includes locations, facility codes, analyte names, asset types, pressure zones, and customer classifications. Maintaining authoritative versions of these datasets — and ensuring they are applied consistently across CMMS, GIS, SCADA, billing, and reporting tools — is essential to integration, analytics, and regulatory compliance. A practical approach to master data management (MDM) starts by identifying key domains, selecting a source of truth for each, and publishing standardized values that downstream systems can adopt or validate against.
+
+[Reference and Master Data](../glossary.md#master-data) represent stable, shared values used across multiple systems and departments.  
+In a water utility, this may include analyte codes, facility IDs, pipe material types, pressure zones, or asset classifications.  
+These values must be consistent across [line of business systems](../glossary.md#line-of-business-system) such as [SCADA](../glossary.md#scada), [CMMS](../glossary.md#cmms), [GIS](../glossary.md#gis), and billing.
+
+Managing [reference data](../glossary.md#reference-data) involves publishing standards, assigning stewards, and enforcing version control.  
+[Master data](../glossary.md#master-data) often maps to key identifiers like location, asset, or customer, and typically has a designated [system of record](../glossary.md#system-of-record).
+
+---
 
 ## Objective
-Establish clear ownership and structure for high-value reference datasets that support accuracy and alignment across operational systems.
+
+Establish trusted, stewarded [reference](../glossary.md#reference-data) and [master data](../glossary.md#master-data) sources to support accurate integration and reporting.
+
+---
 
 ### Key Results
-- Identify three master/reference data domains (e.g., analyte names, facility codes, asset classes)  
-- Designate a system of record and data steward for each domain  
-- Publish a reference table in the EDW and confirm usage in at least one dashboard or report  
-- Document how changes are proposed, reviewed, and approved  
+
+- Identify and steward three core domains (e.g., facility codes, pressure zones, asset types)  
+- Assign a [system of record](../glossary.md#system-of-record) for each and publish to EDW  
+- Publish a version-controlled [reference dataset](../glossary.md#reference-data) used in at least one dashboard  
+- Define a change control process for approving updates  
+
+---
 
 ## Core Processes
-- Domain identification and priority ranking  
-- System-of-record designation  
-- Reference table publication and access setup  
-- Data value normalization and validation  
-- Change control (e.g., new values, deprecation, synonym mapping)  
+
+- Domain identification and prioritization  
+- Reference table publication and access  
+- Cross-system value mapping  
+- Change request review and approval workflow  
+- Stewardship assignment and contact documentation  
+
+---
 
 ## Suggested Metrics
-- Percent of reports referencing published master tables  
-- Number of inconsistent or duplicate values resolved  
-- Time-to-approve a reference value update  
-- Frequency of unauthorized local overrides in source systems
+
+- Coverage of [reference data](../glossary.md#reference-data) in certified dashboards  
+- Number of conflicting or duplicate codes resolved  
+- Time-to-approve value changes  
+- Frequency of unauthorized overrides in source systems

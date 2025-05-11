@@ -1,24 +1,42 @@
 # Data Integration and Interoperability
-Data integration is the process of combining data from different systems to create a unified, consistent view. For water utilities, this might involve bringing together asset information from GIS, maintenance history from CMMS, sensor readings from SCADA, and lab results from LIMS to support cross-functional reporting, compliance, or decision support. Interoperability goes further by enabling systems to exchange data and operate together smoothly in real time or via automated batch processes. A successful EDW depends on well-defined, reliable integration — starting with a few high-value data flows, then scaling over time.
+
+[Data Integration](../glossary.md#data-integration) brings together data from multiple systems to form a consistent, unified view.  
+In a water utility, this may include integrating [SCADA](../glossary.md#scada) data with [CMMS](../glossary.md#cmms) work orders or combining [reference data](../glossary.md#reference-data) across departments.  
+Interoperability ensures that systems can exchange data reliably and on schedule.
+
+An integrated architecture supports [data quality](../glossary.md#data-quality), [metadata](../glossary.md#metadata), and analytics by making data more accessible and standardized.  
+The early focus is on establishing [data pipelines](../glossary.md#data-pipeline) that are documented, monitored, and stewarded.
+
+---
 
 ## Objective
-Establish reliable, well-documented pipelines that connect key systems to the EDW and enable analytics across operational silos.
+
+Implement well-documented and monitored [data pipelines](../glossary.md#data-pipeline) that connect source systems to trusted analytics environments.
+
+---
 
 ### Key Results
-- Build and schedule at least two working extract-load scripts from SCADA and CMMS  
-- Define a common date-time and unit format across incoming sources  
-- Document integration logic and update schedule in MkDocs or a shared repo  
-- Identify and resolve at least one source system conflict (e.g., mismatched asset IDs between GIS and CMMS)
+
+- Configure two initial integrations with working [ELT](../glossary.md#elt-extract-load-transform) or [ETL](../glossary.md#etl-extract-transform-load) pipelines  
+- Document data refresh frequency and transformation logic for each pipeline  
+- Resolve identifier mismatches across [reference data](../glossary.md#reference-data) (e.g., facility codes)  
+- Assign data stewards to manage pipeline handoffs and exceptions  
+
+---
 
 ## Core Processes
-- Source system discovery and access setup  
-- ETL/ELT job configuration and testing  
-- Format and unit normalization  
-- Integration job monitoring and logging  
-- Cross-system identifier mapping and reconciliation  
+
+- Source system discovery and credential management  
+- Pipeline configuration, testing, and automation  
+- Identifier mapping and reconciliation  
+- Data format and unit standardization  
+- Integration documentation with [metadata](../glossary.md#metadata) and steward contact info  
+
+---
 
 ## Suggested Metrics
-- Number of source systems actively feeding the EDW  
-- Percent of ETL jobs running on schedule without failure  
-- Data freshness lag (e.g., time between event and EDW arrival)  
-- Count of unresolved integration conflicts or duplicates
+
+- Number of active [data pipelines](../glossary.md#data-pipeline)  
+- Percentage of pipelines with up-to-date documentation  
+- Data freshness (lag time from source to EDW)  
+- Frequency of pipeline failures or exceptions

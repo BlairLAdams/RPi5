@@ -1,25 +1,42 @@
 # Data Warehousing and Business Intelligence
-Data warehousing consolidates data from multiple systems into a centralized, consistent environment to support reporting, analysis, and decision-making. For water utilities, this means integrating SCADA, CMMS, GIS, LIMS, and ERP data into a structured repository where operations, engineering, and management can access a shared view of system performance, compliance, and planning metrics.
-Business intelligence (BI) builds on the warehouse by delivering dashboards, visualizations, and reports that translate raw data into actionable insights. Together, warehousing and BI enable utilities to move from fragmented data silos to integrated decision support.
+
+The [Enterprise Data Warehouse (EDW)](../glossary.md#data-warehouse-edw) is a central platform that consolidates cleaned, structured data from multiple systems to support analytics and reporting.  
+In a water utility, this may include combining [SCADA](../glossary.md#scada), [CMMS](../glossary.md#cmms), [GIS](../glossary.md#gis), and [LIMS](../glossary.md#line-of-business-system) data  
+into a single environment that supports decision-making, regulatory compliance, and long-term planning.
+
+[Business Intelligence (BI)](../glossary.md#business-intelligence-bi) tools enable users to explore, visualize, and report on this warehouse data through dashboards and charts.  
+This layer builds on [reference data](../glossary.md#reference-data), [data modeling](../glossary.md#data-modeling), [data quality](../glossary.md#data-quality), and [stewardship](../glossary.md#stewardship) practices.
+
+---
 
 ## Objective
-Deploy a centralized data environment that supports consistent reporting and empowers users through shared, visual access to key utility metrics.
+
+Build and maintain a centralized, trusted EDW that supports consistent, reusable metrics and enables users to access reliable insights.
+
+---
 
 ### Key Results
-- Create at least one working data mart from integrated source data (e.g., Silver layer)  
-- Build and publish a dashboard showing three operational or compliance metrics  
-- Document the refresh frequency and data lineage for one report  
-- Onboard at least two new users to the BI tool with training and feedback  
+
+- Create one [data mart](../glossary.md#data-mart) with clean, joined tables for a priority domain  
+- Develop three dashboards or reports using EDW data  
+- Align at least two reports to approved [reference data](../glossary.md#reference-data) or [data dictionary](../glossary.md#data-dictionary) definitions  
+- Define ownership and refresh logic for core metrics  
+
+---
 
 ## Core Processes
-- Data ingestion, transformation, and loading (ELT/ETL)  
-- Semantic layer and data model creation  
-- Dashboard and report design standards  
-- User access provisioning and training  
-- Report lifecycle management (development, approval, retirement)  
+
+- [ETL](../glossary.md#etl-extract-transform-load) or [ELT](../glossary.md#elt-extract-load-transform) job design and orchestration  
+- Metric definition and validation  
+- Semantic layer and [data modeling](../glossary.md#data-modeling) alignment  
+- Report lifecycle management (create, certify, retire)  
+- User onboarding and [data literacy](../glossary.md#data-literacy) support  
+
+---
 
 ## Suggested Metrics
-- Number of active users accessing BI tools each month  
-- Percent of reports backed by certified warehouse tables  
-- Average dashboard load time and data freshness lag  
-- Number of metrics standardized across departments
+
+- Count of certified reports using EDW data  
+- Number of users actively accessing dashboards  
+- Frequency of dashboard refresh failures  
+- Percentage of metrics with agreed definitions and owners

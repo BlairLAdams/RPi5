@@ -1,24 +1,42 @@
 # Data Storage and Operations
-Data storage and operations ensure that data is accessible, reliable, and maintained over time. In a water utility, this includes where structured data (e.g., SCADA readings, lab results) and unstructured content (e.g., PDFs, inspection photos) are stored, how they are backed up, and who is responsible for maintaining those systems. Storage operations also cover data retention, archiving, and system performance. For utilities beginning to centralize data in an EDW, operational storage decisions must balance accessibility, cost, and security, while ensuring that performance can meet the needs of analytics, compliance, and reporting workflows.
+
+Data storage and operations ensure that data remains accessible, reliable, and protected over time.  
+In a water utility, this includes storing structured data from [line of business systems](../glossary.md#line-of-business-system) and [reference data](../glossary.md#reference-data),  
+ensuring [backups](../glossary.md#archiving) are in place, and managing data lifecycle practices like [retention](../glossary.md#data-retention-policy) and [archiving](../glossary.md#archiving).
+
+For organizations adopting an [Enterprise Data Warehouse](../glossary.md#data-warehouse-edw),  
+storage operations also include tracking [data pipelines](../glossary.md#data-pipeline), [metadata](../glossary.md#metadata), and integration refreshes.
+
+---
 
 ## Objective
-Implement a scalable and resilient data storage strategy to support analytics, reporting, and data continuity.
+
+Implement resilient, policy-driven [data storage](../glossary.md#data-architecture) to support analytics, governance, and regulatory continuity.
+
+---
 
 ### Key Results
-- Designate primary and secondary storage locations for structured and unstructured data  
-- Set up automated daily backups of the EDW and key dashboards  
-- Document restore process and test recovery of one dataset  
-- Define and apply retention policies to three data domains (e.g., SCADA logs, inspection records, work orders)  
+
+- Define [retention policies](../glossary.md#data-retention-policy) for three high-value datasets  
+- Establish automated backups and test recovery for one dataset  
+- Document a storage and archiving policy reviewed by stewards  
+- Classify datasets by [criticality](../glossary.md#critical-data-element) and storage tier  
+
+---
 
 ## Core Processes
-- Backup scheduling and integrity verification  
-- Restore testing and incident simulation  
-- Storage tiering and archiving strategy  
-- Retention policy definition and enforcement  
-- Monitoring of storage performance and availability  
+
+- Backup creation and validation  
+- Storage tier classification and [archiving](../glossary.md#archiving)  
+- Retention policy enforcement  
+- Monitoring data volume growth and access frequency  
+- Periodic restore testing for continuity  
+
+---
 
 ## Suggested Metrics
-- Backup success rate over rolling 30 days  
-- Restore time for one mission-critical dataset  
-- Percent of datasets with defined retention rules  
-- Storage usage trends across tiers (hot/warm/archive)
+
+- Recovery time for most critical dataset  
+- Share of datasets covered by [retention policy](../glossary.md#data-retention-policy)  
+- Number of backup failures in last 30 days  
+- Storage growth rate by system or domain

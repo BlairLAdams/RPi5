@@ -1,25 +1,42 @@
 # Data Security
-Data security protects sensitive and mission-critical information from unauthorized access, alteration, or loss. For water utilities, this includes securing SCADA telemetry, customer billing data, work orders, infrastructure maps, and employee records. As utilities move toward integrated systems and cloud-enabled analytics platforms, clear data security practices help reduce operational risk, comply with regulations, and build trust with staff and the public Security is not just an IT responsibility — it involves governance, access policies, auditing, and coordination between departments. For organizations early in their data modernization journey, practical steps like access control and encryption-at-rest offer meaningful risk reduction  
-without heavy overhead.
+
+Data security protects sensitive information from unauthorized access, misuse, or loss.  
+In a water utility, this includes securing SCADA telemetry, [reference data](../glossary.md#reference-data), and operational records managed in the [Enterprise Data Warehouse](../glossary.md#data-warehouse-edw).  
+As integration increases across [line of business systems](../glossary.md#line-of-business-system), strong security practices are essential to reduce risk and maintain trust.
+
+Security is more than firewalls — it includes [access control](../glossary.md#access-control), data classification, audit trails,  
+and governance policies enforced through collaboration between IT and data stewards.
+
+---
 
 ## Objective
-Establish baseline data security practices that protect access, ensure auditability, and reduce risk across key systems.
+
+Establish security practices that protect data confidentiality, integrity, and availability across integrated systems and storage.
+
+---
 
 ### Key Results
-- Define user roles and access levels for EDW and connected tools  
-- Enable password or key-based authentication for all remote services  
-- Implement encrypted backups and confirm successful recovery  
-- Document who has access to sensitive datasets and how that access is granted or revoked  
+
+- Define user roles and [access controls](../glossary.md#access-control) for core datasets  
+- Enable secure authentication for shared systems (e.g., dashboards, EDW)  
+- Publish data classification levels (e.g., confidential, internal, public) and handling guidelines  
+- Assign security stewardship responsibilities for at least one dataset  
+
+---
 
 ## Core Processes
-- User provisioning and de-provisioning  
-- Access review and recertification  
-- Audit logging and incident response  
-- Credential management and key rotation  
-- Security policy publication and acknowledgment  
+
+- Role-based [access control](../glossary.md#access-control) provisioning  
+- Audit logging and change tracking  
+- Sensitive data classification  
+- Integration of security reviews into [governance](../glossary.md#data-governance) workflows  
+- Risk mitigation and policy exception reviews  
+
+---
 
 ## Suggested Metrics
-- Percent of datasets with access rights explicitly defined  
-- Time-to-revoke access after role change or departure  
-- Number of audit log entries reviewed per month  
-- Frequency of access recertification across systems
+
+- Number of datasets with role-based access policies  
+- Frequency of access audits or recertifications  
+- Percentage of datasets with security classification tags  
+- Time to revoke access after a user role change

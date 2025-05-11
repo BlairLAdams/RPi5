@@ -3,15 +3,29 @@ theme:
   name: material
 
 nav:
+nav:
   - Home: index.md
-  - Data Governance: 01_governance/index.md
-  - Data Architecture: 02_architecture/index.md
-  - Data Modeling and Design: 03_modeling/index.md
-  - Data Storage and Operations: 04_storage/index.md
-  - Data Security: 05_security/index.md
-  - Data Integration and Interoperability: 06_integration/index.md
-  - Document and Content Management: 07_content/index.md
-  - Reference and Master Data: 08_masterdata/index.md
-  - Data Warehousing and Business Intelligence: 09_warehousing/index.md
-  - Metadata Management: 10_metadata/index.md
-  - Data Quality: 11_quality/index.md
+  - DMBOK:
+      - Data Governance: 01_governance/index.md
+      - Data Architecture: 02_architecture/index.md
+      - Data Modeling and Design: 03_modeling/index.md
+      - Data Storage and Operations: 04_storage/index.md
+      - Data Security: 05_security/index.md
+      - Data Integration and Interoperability: 06_integration/index.md
+      - Document and Content Management: 07_content/index.md
+      - Reference and Master Data: 08_masterdata/index.md
+      - Data Warehousing and Business Intelligence: 09_warehousing/index.md
+      - Metadata Management: 10_metadata/index.md
+      - Data Quality: 11_quality/index.md
+  - Contributing: contributing.md
+  - Glossary: glossary.md
+
+plugins:
+  - git-revision-date-localized:
+      enable_creation_date: false
+      type: date
+      fallback_to_build_date: true
+
+extra:
+  include_last_updated: true
+

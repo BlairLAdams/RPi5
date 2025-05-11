@@ -1,24 +1,40 @@
 # Data Architecture
-Data architecture defines the blueprint for how data is structured, stored, integrated, and delivered across systems. In a water utility, it ensures that operational systems like SCADA, GIS, CMMS, and LIMS can interoperate cleanly with enterprise tools like the EDW, BI dashboards, and regulatory reporting platforms. Architecture decisions clarify where master data resides, how data flows between systems, and what formats and standards are used. For organizations beginning to centralize analytics and reporting, data architecture provides a scalable, intentional design to reduce duplication, ensure performance, and support future growth.
+
+[Data Architecture](../glossary.md#data-architecture) defines the blueprint for how data is structured, stored, and integrated across systems.  
+In a water utility, this includes designing how data flows between [line of business systems](../glossary.md#line-of-business-system) such as [CMMS](../glossary.md#cmms), [SCADA](../glossary.md#scada), and [GIS](../glossary.md#gis),  
+and how it's centralized into an [Enterprise Data Warehouse](../glossary.md#data-warehouse-edw). Architecture decisions clarify the [system of record](../glossary.md#system-of-record) for key data domains,  
+standardize [reference data](../glossary.md#reference-data), and document data movement through [pipelines](../glossary.md#data-pipeline).
+
+---
 
 ## Objective
-Design and document a scalable data architecture to support integration, accessibility, and trust in the utility's core data assets.
+
+Design and document a scalable [data architecture](../glossary.md#data-architecture) to support trustworthy, integrated data analytics.
+
+---
 
 ### Key Results
-- Create a current-state architecture diagram (source systems, ETL pipelines, data consumers)  
-- Identify master system of record for 3 core domains (e.g., GIS = asset registry)  
-- Document at least one planned data flow per system (e.g., SCADA to EDW)  
-- Publish a data system inventory with owners and refresh frequencies  
+
+- Create a current-state architecture diagram (source systems, [data pipelines](../glossary.md#data-pipeline), consumers)  
+- Designate the [system of record](../glossary.md#system-of-record) for three major domains  
+- Document at least one [data flow](../glossary.md#data-pipeline) from source to warehouse  
+- Publish an inventory of data sources with refresh frequencies and business owners  
+
+---
 
 ## Core Processes
-- Architecture design and stakeholder validation  
-- Master data source designation and documentation  
-- Interface and data pipeline mapping  
-- Metadata tagging of system boundaries and interfaces  
-- Integration approval and version control process  
+
+- Architecture diagramming and validation  
+- Data domain and [system of record](../glossary.md#system-of-record) assignment  
+- Reference data harmonization  
+- Metadata tagging for architectural components  
+- Integration onboarding and change tracking  
+
+---
 
 ## Suggested Metrics
-- Percent of core systems documented in architecture diagram  
-- Number of systems with defined source-of-truth per domain  
-- Time to update architecture documentation after system changes  
-- Rate of redundant data store reduction (e.g., spreadsheets replaced by EDW)
+
+- Number of systems diagrammed with data lineage  
+- Percentage of domains with confirmed [system of record](../glossary.md#system-of-record)  
+- Time-to-update diagrams after system changes  
+- Reduction in redundant data stores

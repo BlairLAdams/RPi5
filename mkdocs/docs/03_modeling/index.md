@@ -1,24 +1,42 @@
 # Data Modeling and Design
-Data modeling defines how data is structured, related, and represented across systems and business processes. In a water utility, this includes defining what an “asset,” “station,” or “work order” means — and how those concepts relate across GIS, CMMS, SCADA, and finance systems. Models provide a shared language for analysts, engineers, and operators, reducing confusion and enabling consistent reporting, analytics, and decision-making. Early-stage data modeling focuses on understanding core entities and relationships and making those models reusable across tools like the EDW, dashboards, and planning systems. Good models also enable scalability and avoid downstream conflicts from inconsistent field definitions or data duplication.
+
+[Data Modeling](../glossary.md#data-modeling) defines how data is structured, related, and represented across systems and business processes.  
+In a water utility, this includes defining what a “station,” “work order,” or “asset” means — and how those concepts relate across [CMMS](../glossary.md#cmms), [SCADA](../glossary.md#scada), and other [line of business systems](../glossary.md#line-of-business-system).  
+Models provide a shared language that supports consistency in analysis, [data quality](../glossary.md#data-quality), and reporting.
+
+Early modeling efforts typically produce [data dictionaries](../glossary.md#data-dictionary), conceptual diagrams, and help align definitions across teams.  
+Validated models also support [metadata](../glossary.md#metadata), [stewardship](../glossary.md#stewardship), and downstream [data marts](../glossary.md#data-mart).
+
+---
 
 ## Objective
-Define and document clear, reusable data models that reflect key business entities and support reliable analytics.
+
+Define and document reusable [data models](../glossary.md#data-modeling) that reflect key entities and support analytics across departments.
+
+---
 
 ### Key Results
-- Create a conceptual entity-relationship diagram for three core domains (e.g., stations, work orders, assets)  
-- Publish definitions and data types for 10 commonly used fields  
-- Align one reporting metric (e.g., downtime) across three departments  
-- Review and validate models with both technical and operational users  
+
+- Draft an entity-relationship diagram for three priority domains  
+- Publish a [data dictionary](../glossary.md#data-dictionary) with field types and definitions  
+- Align one shared metric across multiple departments (e.g., downtime or repair backlog)  
+- Review models with both stewards and system owners  
+
+---
 
 ## Core Processes
+
 - Conceptual and logical model design  
-- Model review and stakeholder sign-off  
-- Field-level data dictionary creation  
-- Alignment of physical schema with reporting needs  
-- Model change control and versioning process  
+- Definition and approval of terms and relationships  
+- Metadata and glossary linkage  
+- Crosswalk creation for [reference data](../glossary.md#reference-data) and codes  
+- Model version control
+
+---
 
 ## Suggested Metrics
-- Numner of models published and reviewed  
-- Percent of dashboards backed by approved data models  
-- Number of conflicting field definitions resolved  
-- Frequency of model reviews and updates
+
+- Number of reviewed and published data models  
+- Coverage of EDW tables linked to approved models  
+- Count of definitions reused across dashboards  
+- Frequency of model review or updates

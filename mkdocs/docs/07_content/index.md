@@ -1,24 +1,41 @@
 # Document and Content Management
-Document and content management addresses the governance of unstructured information — such as reports, SOPs, images, drawings, and contracts. In a water utility, these assets often support or contextualize structured data systems like CMMS, GIS, and LIMS. For example, an as-built drawing may explain why a pipe was rerouted, or a PDF lab report may clarify an outlier reading in the EDW. Proper content management ensures that critical documents are accessible, version-controlled, linked to the appropriate data, and retained or archived according to policy. It also helps with regulatory audits, transparency, and operational continuity.
+
+[Document and Content Management](../glossary.md#document-and-content-management) governs unstructured content such as reports, SOPs, drawings, PDFs, and inspection photos.  
+In a water utility, these materials often provide the operational context needed to interpret [structured data](../glossary.md#data-architecture) in systems like [CMMS](../glossary.md#cmms) or [EDW](../glossary.md#data-warehouse-edw).
+
+Effective content management ensures documents are accessible, version-controlled, and tied to relevant datasets or processes.  
+It supports [governance](../glossary.md#data-governance), transparency, and long-term knowledge retention — especially during staff transitions or audits.
+
+---
 
 ## Objective
-Ensure that essential unstructured content is properly stored, accessible, and linked to key datasets to support data context and continuity.
+
+Ensure that essential documents are properly stored, searchable, and linked to data workflows where applicable.
+
+---
 
 ### Key Results
-- Create an inventory of 10 critical documents (e.g., SOPs, drawings, lab reports) and store them in a managed location  
-- Define file naming conventions and folder structure for new content uploads  
-- Link at least two documents to related structured records (e.g., an SOP to a dataset or dashboard)  
-- Document version control process and assign responsibility  
+
+- Inventory and centralize 10 critical documents supporting operational or regulatory workflows  
+- Define file naming conventions and storage folders for team-wide consistency  
+- Link two SOPs or PDFs to dashboards or datasets via metadata or [glossary](../glossary.md#business-glossary) references  
+- Document and assign responsibilities for document versioning and archival  
+
+---
 
 ## Core Processes
+
 - Document ingestion, review, and approval  
-- Versioning and change tracking  
-- Metadata tagging (e.g., document type, system, date)  
-- Retention schedule enforcement  
-- Linkage of content to structured data via indexes or dashboards  
+- Version control and file locking  
+- Metadata tagging for document type, domain, and steward  
+- Periodic review and update of aging content  
+- Archival and [retention policy](../glossary.md#data-retention-policy) enforcement  
+
+---
 
 ## Suggested Metrics
-- Percent of key datasets with supporting documents identified and linked  
-- Number of documents reviewed and updated within the past 12 months  
-- Time-to-retrieve requested documents during an audit or event  
-- Document redundancy or duplication rate across systems
+
+- Number of linked documents per data domain  
+- Average retrieval time during audits or requests  
+- Frequency of document updates by team or system  
+- Percentage of critical SOPs reviewed within past 12 months
