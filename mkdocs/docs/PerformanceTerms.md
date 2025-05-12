@@ -6,52 +6,64 @@ This page defines and distinguishes between performance terms used in data gover
 
 ## Strategic Layer: Vision, Goals, and Outcomes
 
-### Vision  
+### Vision
+
 A long-term aspirational statement defining what the organization ultimately seeks to achieve.  
 *Example:* “To deliver clean, resilient water services for future generations.”
 
-### Mission  
+### Mission
+
 The organization’s core purpose and guiding philosophy.  
 *Example:* “To operate and maintain water infrastructure that protects public health, meets regulatory requirements, and delivers exceptional value to our community.”
 
-### North Star Objective  
+### North Star Objective
+
 A unifying, long-range goal that connects all teams and initiatives.  
 *Example:* “Build a data-driven utility that empowers transparent decision-making, proactive asset management, and exceptional service delivery.”
 
-### Objectives (in OKRs)  
+### Objectives (in OKRs)
+
 Aspirational, qualitative statements of **what** we want to achieve.
 
 **Characteristics:**
+
 - Time-bound (quarterly or annual)
 - Aligned with mission
 - Inspirational, not numerical
 - Supported by Key Results
 
 *Examples:*
+
 - “Improve system reliability across all treatment facilities”
 - “Accelerate digital modernization of field operations”
 
-### Key Results  
+### Key Results
+
 Measurable, time-bound outcomes that define success for an Objective.
 
 **Characteristics:**
+
 - Quantitative
 - Outcome-focused
 - Time-boxed and scored
 
 *Examples:*
+
 - “Reduce unplanned downtime by 50% by end of Q3”
 - “Digitize 100% of field forms by Q4”
 
-### Key Performance Indicators (KPIs)  
+### Key Performance Indicators (KPIs)
+
 High-priority metrics used to evaluate performance toward organizational goals.
 
 **Characteristics:**
+
 - Tied to strategic priorities
 - Have thresholds or targets
 - Featured in dashboards
 
 *Examples:*
+
 - Average time to repair (< 24 hrs)
 - Water loss percentage (< 10%)
 - Customer satisfaction (> 90%)
@@ -60,28 +72,34 @@ High-priority metrics used to evaluate performance toward organizational goals.
 
 ## Tactical Layer: Data Inputs and Monitoring Tools
 
-### Metrics  
+### Metrics
+
 Quantitative values used to monitor status of processes or systems.
 
 **Characteristics:**
+
 - Descriptive
 - Operational or strategic
 - Collected continuously
 
 *Examples:*
+
 - Gallons treated per day
 - Service requests received
 - Page load time
 
-### Measures  
+### Measures
+
 The smallest units of quantifiable observation. Often inputs to metrics and KPIs.
 
 **Characteristics:**
+
 - Fine-grained
 - Used in calculations
 - Require context to be meaningful
 
 *Examples:*
+
 - Number of outages
 - Uptime hours
 - Cost per treatment unit

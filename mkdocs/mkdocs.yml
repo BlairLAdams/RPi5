@@ -1,5 +1,5 @@
-site_name: RPi5 Open Source Analytics Platform
-use_directory_urls: false
+site_name: Open Source Analytics Platform
+use_directory_urls: true
 
 theme:
   name: material
@@ -45,6 +45,17 @@ nav:
       - Analytics Architectures: Architectures.md
       - Governance Frameworks: GovernanceFrameworks.md
       - Mermaid Diagrams: MermaidDiagrams.md
+  - Stack:
+      - Raspberry Pi: RPi5.md
+      - Comparisons: StackComparisons.md
+      - DE Skills: SkillLevels.md
+      - Analytics Deck: https://docs.google.com/presentation/d/1ACAE7UquavbQ15peb3CnmLqfQYJWLGAMXQ0OkgR-TMc/edit?usp=sharing
+      - Apps:
+          - Metabase: https://metabase.hoveto.ca
+          - Grafana: https://grafana.hoveto.ca
+          - dbt Docs: https://dbt.hoveto.ca
+          - Dagster: https://dagster.hoveto.ca
+          - Prometheus: https://prometheus.hoveto.ca
 
 plugins:
   - search
@@ -55,18 +66,21 @@ plugins:
 
 extra:
   include_last_updated: true
-  footer: |
-    This document is the product of ongoing experiments with generative AI, specifically focused on prompt engineering  
-    and knowledge design using ChatGPT-4o. It has been developed and refined iteratively through applied exploration of  
-    contemporary data architecture patterns, data governance, source code management practices, and quality assurance methodologies.
+  footer:
+    <small>
+      <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">
+        <img src="https://licensebuttons.net/l/by/4.0/88x31.png" alt="CC BY 4.0" style="height:20px; vertical-align:middle;" />
+        Content licensed under Creative Commons Attribution 4.0 International (CC BY 4.0)
+      </a>
+    </small>
 
 markdown_extensions:
+  - attr_list
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-  - attr_list
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js

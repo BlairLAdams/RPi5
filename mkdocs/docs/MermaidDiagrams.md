@@ -4,8 +4,6 @@ Mermaid diagrams provide lightweight, code-based visuals ideal for use in data g
 
 This reference includes examples of all supported Mermaid diagram types relevant to technical documentation.
 
----
-
 ## Flowchart
 
 **Description:**
