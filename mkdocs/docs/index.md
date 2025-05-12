@@ -1,6 +1,6 @@
 # Open Source Analytics Platform
 
-This project is a low-cost (<$200), modular analytics platform developed on a Raspberry Pi 5 running Raspberry Pi OS Lite in a headless configuration. It is inspired by the spirit of Maker Faire and intended as a learning-oriented, fully open-source experiment in hands-on data engineering. The system design emphasizes simplicity, observability, and reproducibility, while promoting best practices in infrastructure automation and modern data stack tooling.
+This project is a low-cost, modular analytics platform developed on a Raspberry Pi 5 running Raspberry Pi OS Lite in a headless configuration. It is inspired by the spirit of Maker Faire and intended as a learning-oriented, fully open-source experiment in hands-on data engineering. The system design emphasizes simplicity, observability, and reproducibility, while promoting best practices in infrastructure automation and modern data stack tooling.
 
 ## Purpose and Philosophy
 
