@@ -2,11 +2,9 @@
 
 # Document and Content Management
 
-[Document and Content Management](../glossary.md#document-and-content-management) governs unstructured information such as reports, SOPs, maps, permits, inspection photos, and PDFs.  
-In a water utility, these materials often complement structured data by providing the operational, regulatory, or historical context behind assets and activities.
+[Document and Content Management](../glossary.md#document-and-content-management) governs unstructured information such as reports, SOPs, maps, permits, inspection photos, and PDFs. In a water utility, these materials often complement structured data by providing the operational, regulatory, or historical context behind assets and activities.
 
-When properly managed, content becomes searchable, version-controlled, and linked to relevant datasets, improving transparency and supporting staff transitions.  
-This function aligns with [data governance](../glossary.md#data-governance) and [stewardship](../glossary.md#stewardship) by assigning ownership and retention guidelines.
+When properly managed, content becomes searchable, version-controlled, and linked to relevant datasets, improving transparency and supporting staff transitions. This function aligns with [data governance](../glossary.md#data-governance) and [stewardship](../glossary.md#stewardship) by assigning ownership and retention guidelines.
 
 ---
 

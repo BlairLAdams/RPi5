@@ -2,9 +2,7 @@
 
 # Data Quality
 
-[Data Quality](../glossary.md#data-quality) ensures that data is accurate, complete, timely, and consistent enough to support operations, reporting, and decision-making.  
-In a water utility, poor data quality can lead to incorrect work orders, delayed compliance reports, or misinformed capital investments.  
-A proactive quality program helps identify and fix issues early — often by combining [stewardship](../glossary.md#stewardship), monitoring, and feedback loops.
+[Data Quality](../glossary.md#data-quality) ensures that data is accurate, complete, timely, and consistent enough to support operations, reporting, and decision-making. In a water utility, poor data quality can lead to incorrect work orders, delayed compliance reports, or misinformed capital investments. A proactive quality program helps identify and fix issues early — often by combining [stewardship](../glossary.md#stewardship), monitoring, and feedback loops.
 
 Data quality also plays a key role in adoption. When staff trust the data, they use it more consistently and effectively.
 

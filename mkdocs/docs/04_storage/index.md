@@ -2,12 +2,9 @@
 
 # Data Storage and Operations
 
-Data storage and operations ensure that data remains accessible, reliable, and protected over time.  
-In a water utility, this includes storing structured data from [line of business systems](../glossary.md#line-of-business-system) and [reference data](../glossary.md#reference-data),  
-ensuring [archiving](../glossary.md#archiving) is in place, and managing data lifecycle practices like [retention](../glossary.md#data-retention-policy).
+Data storage and operations ensure that data remains accessible, reliable, and protected over time. In a water utility, this includes storing structured data from [line of business systems](../glossary.md#line-of-business-system) and [reference data](../glossary.md#reference-data), ensuring [archiving](../glossary.md#archiving) is in place, and managing data lifecycle practices like [retention](../glossary.md#data-retention-policy).
 
-For organizations adopting an [Enterprise Data Warehouse](../glossary.md#data-warehouse-edw),  
-storage operations also include tracking [data pipelines](../glossary.md#data-pipeline), [metadata](../glossary.md#metadata), and integration refreshes.
+For organizations adopting an [Enterprise Data Warehouse](../glossary.md#data-warehouse-edw),  storage operations also include tracking [data pipelines](../glossary.md#data-pipeline), [metadata](../glossary.md#metadata), and integration refreshes.
 
 ---
 

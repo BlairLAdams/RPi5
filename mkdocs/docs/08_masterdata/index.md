@@ -2,12 +2,9 @@
 
 # Reference and Master Data
 
-[Reference and Master Data](../glossary.md#master-data) are shared values and entities used across multiple systems and business processes.  
-In a water utility, this may include zone codes, facility names, pipe materials, analyte lists, and asset classifications.  
-These data types often form the backbone of integration efforts and are critical for aligning reporting and operations.
+[Reference and Master Data](../glossary.md#master-data) are shared values and entities used across multiple systems and business processes. In a water utility, this may include zone codes, facility names, pipe materials, analyte lists, and asset classifications. These data types often form the backbone of integration efforts and are critical for aligning reporting and operations.
 
-[Reference data](../glossary.md#reference-data) values are typically finite and stable (e.g., unit types, regions),  
-while [master data](../glossary.md#master-data) refers to key business entities like stations, customers, or assets with lifecycle status and [system of record](../glossary.md#system-of-record) designations.
+[Reference data](../glossary.md#reference-data) values are typically finite and stable (e.g., unit types, regions), while [master data](../glossary.md#master-data) refers to key business entities like stations, customers, or assets with lifecycle status and [system of record](../glossary.md#system-of-record) designations.
 
 ---
 

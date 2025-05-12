@@ -2,9 +2,7 @@
 
 # Metadata Management
 
-[Metadata](../glossary.md#metadata) describes the structure, meaning, source, stewardship, and lifecycle of data.  
-In a water utility, it helps teams understand what a field like “runtime hours” means, who owns it, and when it was last updated — providing the context behind every dataset.  
-Strong metadata practices support [data stewardship](../glossary.md#stewardship), enable [data governance](../glossary.md#data-governance), and reduce onboarding time for new analysts or engineers.
+[Metadata](../glossary.md#metadata) describes the structure, meaning, source, stewardship, and lifecycle of data. In a water utility, it helps teams understand what a field like “runtime hours” means, who owns it, and when it was last updated — providing the context behind every dataset. Strong metadata practices support [data stewardship](../glossary.md#stewardship), enable [data governance](../glossary.md#data-governance), and reduce onboarding time for new analysts or engineers.
 
 Metadata may include field descriptions, data dictionaries, [business glossary](../glossary.md#business-glossary) terms, [data pipeline](../glossary.md#data-pipeline) refresh schedules, and source-to-target documentation.
 

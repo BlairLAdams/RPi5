@@ -2,12 +2,9 @@
 
 # Data Integration and Interoperability
 
-[Data Integration](../glossary.md#data-integration) connects data across systems to provide a unified, consistent view of operations and performance.  
-In a water utility, this often means pulling data from field systems, work management tools, or lab results into an [Enterprise Data Warehouse](../glossary.md#data-warehouse-edw) for analysis and reporting.  
-Good integration practices ensure data is accurate, up-to-date, and traceable to its [system of record](../glossary.md#system-of-record).
+[Data Integration](../glossary.md#data-integration) connects data across systems to provide a unified, consistent view of operations and performance. In a water utility, this often means pulling data from field systems, work management tools, or lab results into an [Enterprise Data Warehouse](../glossary.md#data-warehouse-edw) for analysis and reporting. Good integration practices ensure data is accurate, up-to-date, and traceable to its [system of record](../glossary.md#system-of-record).
 
-As more systems connect, [metadata](../glossary.md#metadata) and [data quality](../glossary.md#data-quality) become central to understanding how values relate,  
-while stewards and architects play a key role in defining and reviewing [data pipelines](../glossary.md#data-pipeline).
+As more systems connect, [metadata](../glossary.md#metadata) and [data quality](../glossary.md#data-quality) become central to understanding how values relate, while stewards and architects play a key role in defining and reviewing [data pipelines](../glossary.md#data-pipeline).
 
 ---
 

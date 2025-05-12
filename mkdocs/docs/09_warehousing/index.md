@@ -2,11 +2,9 @@
 
 # Data Warehousing and Business Intelligence
 
-The [Enterprise Data Warehouse (EDW)](../glossary.md#data-warehouse-edw) serves as a central platform for reporting, analytics, and historical analysis.  
-It brings together structured, high-quality data from multiple sources — typically operational, regulatory, and administrative — to provide a consistent foundation for decision-making.
+The [Enterprise Data Warehouse (EDW)](../glossary.md#data-warehouse-edw) serves as a central platform for reporting, analytics, and historical analysis. It brings together structured, high-quality data from multiple sources — typically operational, regulatory, and administrative — to provide a consistent foundation for decision-making.
 
-[Business Intelligence (BI)](../glossary.md#business-intelligence-bi) tools allow staff to visualize, explore, and analyze this data in dashboards, charts, and reports.  
-Both the EDW and BI layers depend heavily on [reference data](../glossary.md#reference-data), [data stewardship](../glossary.md#stewardship), and well-defined [data models](../glossary.md#data-modeling).
+[Business Intelligence (BI)](../glossary.md#business-intelligence-bi) tools allow staff to visualize, explore, and analyze this data in dashboards, charts, and reports. Both the EDW and BI layers depend heavily on [reference data](../glossary.md#reference-data), [data stewardship](../glossary.md#stewardship), and well-defined [data models](../glossary.md#data-modeling).
 
 ---
 

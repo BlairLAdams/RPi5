@@ -2,9 +2,7 @@
 
 # Data Security
 
-Data security protects sensitive information from unauthorized access, misuse, or loss.  
-In a water utility, this includes securing operational telemetry, [reference data](../glossary.md#reference-data), and system-generated records managed in the [Enterprise Data Warehouse](../glossary.md#data-warehouse-edw).  
-Strong security practices are essential to reduce risk and maintain trust as data is shared across departments and platforms.
+Data security protects sensitive information from unauthorized access, misuse, or loss. In a water utility, this includes securing operational telemetry, [reference data](../glossary.md#reference-data), and system-generated records managed in the [Enterprise Data Warehouse](../glossary.md#data-warehouse-edw). Strong security practices are essential to reduce risk and maintain trust as data is shared across departments and platforms.
 
 Security involves [access control](../glossary.md#access-control), data classification, audit trails, and [data governance](../glossary.md#data-governance) policies that are enforced consistently by stewards and IT administrators.
 
