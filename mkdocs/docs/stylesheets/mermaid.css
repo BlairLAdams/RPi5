@@ -4,25 +4,42 @@
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  max-width: 100%;
 }
 
-/* Fix Git graph label contrast */
+/* Theme-specific overrides using data-md-color-scheme */
+html[data-md-color-scheme="default"] .mermaid {
+  --mermaid-theme: default;
+}
 
+/* Dark theme styling for Mermaid */
+html[data-md-color-scheme="slate"] .mermaid {
+  --mermaid-theme: dark;
+}
+
+/* Git graph label contrast fixes */
 .mermaid .commit-label,
 .mermaid .branch-label,
 .mermaid .tag-label {
-  fill: #ffffff !important;     /* Text color */
+  fill: #ffffff !important;       /* Text color */
   font-weight: 600 !important;
 }
 
 .mermaid .branch-label-bg,
 .mermaid .tag-label-bg {
-  fill: #3f51b5 !important;     /* Indigo Material Blue background */
+  fill: #3f51b5 !important;       /* Indigo Material Blue background */
   stroke: #3f51b5 !important;
 }
 
-/* Optional: pad background box size to avoid text cutoffs */
+/* Padding for background label boxes */
 .mermaid .labelBox {
   rx: 4;
   ry: 4;
+}
+
+.md-footer-meta {
+  font-size: 0.75rem;
+  color: #888;
+  line-height: 1.4;
+  text-align: center;
 }

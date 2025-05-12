@@ -1,15 +1,22 @@
-if (window.mermaid) {
-  mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-      fontFamily: 'Roboto, Helvetica Neue, sans-serif',
-      fontSize: '16px',
-      textColor: '#ffffff',
-      primaryColor: '#3f51b5',       // Label background (branch/tag)
-      primaryTextColor: '#ffffff',   // Label text color
-      primaryBorderColor: '#3f51b5', // Outline
-      lineColor: '#bb86fc'           // Arrows and edges
-    }
-  });
+function initMermaid() {
+  if (window.mermaid) {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.documentElement.getAttribute("data-md-color-scheme") === "slate" ? "dark" : "default",
+      securityLevel: "loose",
+      flowchart: { useMaxWidth: true },
+      logLevel: 1
+    });
+    mermaid.run(); // re-render existing blocks
+  }
 }
+
+// Initialize on page load
+document.addEventListener("DOMContentLoaded", initMermaid);
+
+// Reinitialize after theme toggle
+document.addEventListener("change", (event) => {
+  if (event.target.matches('[data-md-toggle="color-scheme"]')) {
+    setTimeout(initMermaid, 200);
+  }
+});

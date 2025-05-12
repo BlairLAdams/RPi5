@@ -1,1 +1,0 @@
-{"_invocation_id": "c7c8d1ea-8de7-4a7d-86bb-f84b2a13d578", "linked": {"0": {"name": "model.bronze_dbt.silverWq", "type": "model"}, "1": {"name": "model.bronze_dbt.bronze_wq_to_silver", "type": "model"}}}

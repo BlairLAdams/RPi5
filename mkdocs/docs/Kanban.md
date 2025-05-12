@@ -32,18 +32,28 @@ This page introduces **Agile Kanban** — a visual workflow management method us
 
 ---
 
-## Common Terminology
+## Common Agile Terminology
 
-| Term               | Definition |
-|--------------------|------------|
-| **Board**          | A visual display of workflow columns and task cards |
-| **Card**           | A unit of work or task (e.g., user story, data issue, enhancement) |
-| **Column**         | A stage in the workflow (e.g., Backlog → In Progress → Done) |
-| **WIP Limit**      | The maximum number of cards allowed in a column at once |
-| **Cycle Time**     | The time taken to complete a card from start to finish |
-| **Throughput**     | The number of work items completed in a given period |
-| **Swimlane**       | Horizontal grouping of cards by type, project, or priority |
-| **Blocked**        | A card that cannot proceed due to a dependency or issue |
+| Term Agile                  | Definition                                                                                    |
+| ---------------------- | --------------------------------------------------------------------------------------------- |
+| **Agile**              | A mindset and approach emphasizing adaptability and value delivery                            |
+| **Scrum**              | A framework based on time-boxed iterations (sprints), with defined roles and ceremonies       |
+| **Kanban**             | A pull-based system for managing and visualizing workflow                                     |
+| **Sprint**             | A fixed-length iteration (commonly 2–4 weeks) where a team delivers a defined set of work     |
+| **User Story**         | A structured expression of user needs (e.g., “As a \[user], I want \[goal] so that \[value]”) |
+| **Backlog**            | A prioritized list of tasks or features to be completed                                       |
+| **Epic**               | A large body of work that can be broken into smaller stories                                  |
+| **Task**               | A specific action or unit of work, often linked to a user story                               |
+| **Card**               | A visual representation of a task or story on a board                                         |
+| **Board**              | A visual layout of work (columns, swimlanes, cards)                                           |
+| **Column**             | A workflow state (e.g., To Do, In Progress, Done)                                             |
+| **WIP Limit**          | Maximum number of items allowed in a column to prevent overload                               |
+| **Cycle Time**         | Time taken for a task to move from start to completion                                        |
+| **Lead Time**          | Time from task request to delivery                                                            |
+| **Velocity**           | The number of story points or tasks completed per sprint (Scrum)                              |
+| **Burndown Chart**     | A graph tracking remaining work over time during a sprint                                     |
+| **Definition of Done** | Team agreement on what qualifies work as complete                                             |
+| **Blocked**            | A task that cannot proceed due to a dependency or issue                                       |
 
 ---
 

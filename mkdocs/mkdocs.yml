@@ -3,6 +3,20 @@ use_directory_urls: false
 
 theme:
   name: material
+  custom_dir: overrides
+  palette:
+    - scheme: slate
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+    - scheme: default
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
   features:
     - navigation.top
     - search.highlight
@@ -21,16 +35,16 @@ nav:
       - Data Warehousing and Business Intelligence: 09_warehousing/index.md
       - Metadata Management: 10_metadata/index.md
       - Data Quality: 11_quality/index.md
-      - DMBOK Glossary: DmbokGlossary.md
+      - DMBOK Glossary: glossary.md
 
   - Key Concepts:
-    - Performance Terminology: PerformanceTerms.md
-    - Agile Kanban: Kanban.md
-    - Objectives and Key Results: OKRs.md
-    - Design Thinking: DesignThinking.md
-    - Analytics Architectures: Architectures.md
-    - Governance Frameworks: GovernanceFrameworks.md
-    - Mermaid Diagrams: MermaidDiagrams.md
+      - Performance Terminology: PerformanceTerms.md
+      - Agile Kanban: Kanban.md
+      - Objectives and Key Results: OKRs.md
+      - Design Thinking: DesignThinking.md
+      - Analytics Architectures: Architectures.md
+      - Governance Frameworks: GovernanceFrameworks.md
+      - Mermaid Diagrams: MermaidDiagrams.md
 
 plugins:
   - search
@@ -41,6 +55,10 @@ plugins:
 
 extra:
   include_last_updated: true
+  footer: |
+    This document is the product of ongoing experiments with generative AI, specifically focused on prompt engineering  
+    and knowledge design using ChatGPT-4o. It has been developed and refined iteratively through applied exploration of  
+    contemporary data architecture patterns, data governance, source code management practices, and quality assurance methodologies.
 
 markdown_extensions:
   - pymdownx.superfences:
@@ -51,7 +69,7 @@ markdown_extensions:
   - attr_list
 
 extra_javascript:
-  - https://cdn.jsdelivr.net/npm/mermaid@10.4.0/dist/mermaid.min.js
+  - https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js
   - extra.js
 
 extra_css:
