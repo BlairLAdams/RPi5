@@ -9,17 +9,21 @@ This project showcases a **modular, low-cost data analytics and observability st
 ### Raspberry Pi OS Lite  
 A minimal Debian-based distribution selected for its headless, lightweight footprint. It is flashed to a microSD card and accessed via SSH to emulate edge deployment conditions.
 
+### Visual Studio Code (Remote)  
+Remote SSH integration with VS Code allows the developer to manage the Pi from a desktop environment. This supports inline Git usage, terminal access, and Python development directly on the target system.
+
 ### Git  
 All scripts, configurations, and dashboards are tracked in a Git repository. SSH keys manage secure access, enabling rollback, collaboration, and infrastructure versioning.
 
-### Visual Studio Code (Remote)  
-Remote SSH integration with VS Code allows the developer to manage the Pi from a desktop environment. This supports inline Git usage, terminal access, and Python development directly on the target system.
+### Python (venv)  
+Used throughout for **ETL scripting**, orchestration, and integration. A dedicated virtual environment (`~/scr/venv`) contains core libraries like `polars`, `sqlalchemy`, and `pint`.
 
 ### PostgreSQL  
 Serves as the **OLTP data store** for sensor readings, reference tables, and structured logs. Its schema follows the **medallion architecture** (bronze and silver), enabling clear data lineage and progressive refinement.
 
-### Python  
-Used throughout for **ETL scripting**, orchestration, and integration. A dedicated virtual environment (`~/scr/venv`) contains core libraries like `polars`, `sqlalchemy`, and `pint`.
+### PostGIS  
+An extension to PostgreSQL that enables advanced **geospatial data support**. PostGIS allows the stack to handle spatial queries, store geometries (points, lines, polygons), and perform GIS-style analytics. It is ideal for modeling field assets, service areas, and location-based events directly within the relational database.
+Let me 
 
 ### Node Exporter  
 Lightweight exporter that exposes live Linux system metrics (CPU, RAM, disk, network) on port `:9100`.
