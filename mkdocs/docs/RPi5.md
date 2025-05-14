@@ -4,7 +4,7 @@ This project showcases a **modular, low-cost data analytics and observability st
 
 ---
 
-## Components
+## RPi5 Stack
 
 ### Raspberry Pi OS Lite  
 A minimal Debian-based distribution selected for its headless, lightweight footprint. It is flashed to a microSD card and accessed via SSH to emulate edge deployment conditions.

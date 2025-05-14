@@ -27,7 +27,7 @@ This platform is suited for:
 
 Its minimalist hardware footprint and educational emphasis make it ideal for STEM classrooms, bootcamps, independent learners, and civic technologists.
 
-# Raspberry Pi 5 – 16GB RAM
+## Raspberry Pi 5 Specifications
 
 ## Overview
 A powerful single-board computer designed for edge computing, prototyping, and embedded analytics — this version is configured with an upgraded 16GB LPDDR4X RAM module for high-demand workloads such as data orchestration, pipelines, or local inference.

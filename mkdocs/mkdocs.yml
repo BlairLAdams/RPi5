@@ -36,7 +36,7 @@ nav:
       - EDW Harmonization: EDWHarmonization.md
       - Performance Terminology: PerformanceTerms.md
 
-  - Cyber Security:
+  - Cyber:
       - NIST CSF: NISTCSF.md
       - NIST RMF: NISTRMF.md
       - NIST Risk Assessment: NISTGuide.md
@@ -68,7 +68,7 @@ nav:
       - Data Quality: 11_quality/index.md
       - DMBOK Glossary: glossary.md
 
-  - Markdown Tips:
+  - Markdown:
       - Markdown Guide: MarkdownGuide.md
       - Mermaid Diagrams: MermaidDiagrams.md
 
