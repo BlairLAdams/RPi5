@@ -18,6 +18,9 @@ All scripts, configurations, and dashboards are tracked in a Git repository. SSH
 ### Python (venv)  
 Used throughout for **ETL scripting**, orchestration, and integration. A dedicated virtual environment (`~/scr/venv`) contains core libraries like `polars`, `sqlalchemy`, and `pint`.
 
+### DuckDB  
+Serves as the **OLAP engine** for analytical queries over the silver-tier data. It is optimized for **local, columnar workloads** and integrates seamlessly with Python, dbt, and Metabase. DuckDB enables fast exploration of aggregated sensor and lab data without standing up a full-scale database server, making it ideal for edge deployments and prototype scenarios.
+
 ### PostgreSQL  
 Serves as the **OLTP data store** for sensor readings, reference tables, and structured logs. Its schema follows the **medallion architecture** (bronze and silver), enabling clear data lineage and progressive refinement.
 
