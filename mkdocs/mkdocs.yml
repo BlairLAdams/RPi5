@@ -23,15 +23,24 @@ theme:
 
 nav:
   - Home: index.md
-  - Key Concepts:
-      - Performance Terminology: PerformanceTerms.md
-      - Agile Kanban: Kanban.md
+  - Concepts:
+      - CMMi: CMMi.md
       - Objectives and Key Results: OKRs.md
       - Design Thinking: DesignThinking.md
-      - Analytics Architectures: Architectures.md
+      - Agile Kanban: Kanban.md
+
+  - EDW:
       - Governance Frameworks: GovernanceFrameworks.md
-      - Markdown Guide: MarkdownGuide.md
-      - Mermaid Diagrams: MermaidDiagrams.md
+      - Analytics Architectures: Architectures.md
+      - Medallion Architecture: MedallionArchitecture.md
+      - EDW Harmonization: EDWHarmonization.md
+      - Performance Terminology: PerformanceTerms.md
+
+  - Cyber Security:
+      - NIST CSF: NISTCSF.md
+      - NIST RMF: NISTRMF.md
+      - NIST Risk Assessment: NISTGuide.md
+      - Purdue Model: Purdue.md 
       
   - Stack:
       - Raspberry Pi: RPi5.md
@@ -44,6 +53,7 @@ nav:
           - dbt Docs: https://dbt.hoveto.ca
           - Dagster: https://dagster.hoveto.ca
           - Prometheus: https://prometheus.hoveto.ca
+
   - DMBOK:
       - Data Governance: 01_governance/index.md
       - Data Architecture: 02_architecture/index.md
@@ -57,6 +67,10 @@ nav:
       - Metadata Management: 10_metadata/index.md
       - Data Quality: 11_quality/index.md
       - DMBOK Glossary: glossary.md
+
+  - Markdown Tips:
+      - Markdown Guide: MarkdownGuide.md
+      - Mermaid Diagrams: MermaidDiagrams.md
 
 plugins:
   - search
