@@ -1,9 +1,10 @@
-from dagster import Definitions, load_assets_from_modules
+from dagster import Definitions, load_assets_from_package_module
+import analytics
+from analytics.dbt_assets import dbt_assets
 
-from analytics import assets  # noqa: TID252
-
-all_assets = load_assets_from_modules([assets])
+all_assets = load_assets_from_package_module(analytics)
 
 defs = Definitions(
-    assets=all_assets,
+    assets=all_assets + dbt_assets,
 )
+
