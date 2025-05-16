@@ -25,6 +25,7 @@ __pycache__/
 venv/
 */venv/
 .venv/
+venv_bak/
 
 # Data artifacts
 *.parquet
@@ -48,3 +49,4 @@ metabase/*.trace.db
 # DBT artifacts
 dbt/logs/
 dbt/target/
+dagster_backup_20250514_1306.zip

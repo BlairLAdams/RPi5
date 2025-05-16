@@ -24,6 +24,7 @@ theme:
 nav:
   - Home: index.md
   - Concepts:
+      - Cognitive Biases: CognitiveBiases.md
       - Utility Theory: UtilityTheory.md
       - CMMi: CMMi.md
       - OKR: OKROverview.md
