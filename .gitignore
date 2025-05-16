@@ -8,7 +8,6 @@ __pycache__/
 
 # MkDocs build output
 /mkdocs/site/
-!/mkdocs/docs/
 
 # dbt artifacts
 /dbt/target/
@@ -39,12 +38,7 @@ venv/
 .DS_Store
 
 # Dagster project cache and history
-dagster/.tmp_dagster_home_*/
-dagster/history/
-dagster/schedules/
-dagster/logs/
-dagster/**/__pycache__/
-dagster_bak/
+/dagster/
 
 # Metabase database artifacts
 metabase/*.mv.db

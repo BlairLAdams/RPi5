@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-generate_lake_merced_scada.py
+generate_scada_tags.py
 
 Generates synthetic SCADA tag data for Lake Merced water infrastructure assets.
 This enhanced version includes operational tags for:
