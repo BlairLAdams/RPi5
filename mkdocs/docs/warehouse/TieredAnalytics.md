@@ -22,7 +22,7 @@ This layered model creates structure and accountability — so analysts can expl
 
 ## 🟫 Bronze – Raw Data and the Source of Truth
 
-Bronze is the **raw ingestion layer**. It captures every file, reading, and log exactly as it was received — from SCADA sensors, CMMS exports, LIMS reports, spreadsheets, and APIs.
+Bronze is the **raw ingestion layer**. It captures every file, reading, and log exactly as it was received from SCADA sensors, CMMS exports, LIMS reports, spreadsheets, and APIs.
 
 Nothing is filtered or modified. Every record is timestamped and stored for traceability. This layer serves as the **source of truth** — critical for audits, data science, historical investigations, or future reprocessing if definitions change.
 
@@ -60,11 +60,11 @@ Cleaned, Integrated, Core, Conformed, Intermediate Layer
 
 ## 🥇 Gold – Trusted Metrics for Decision-Making
 
-Gold is the **semantic layer** — a curated, documented, and versioned set of business metrics. It defines KPIs like "chlorine compliance rate," "average days to close a work order," or "downtime per pump."
+Gold is the **semantic layer** a curated, documented, and versioned set of business metrics. It defines KPIs like "chlorine compliance rate," "average days to close a work order," or "downtime per pump."
 
 Gold is where **enterprise alignment** happens. Metrics here are governed and consistent — used across executive dashboards, finance reports, board briefings, and regulatory submissions.
 
-These datasets typically live in **OLAP-optimized systems** — such as DuckDB or BI models in Power BI — supporting fast reads, aggregations, and secure slicing by geography or time.
+These datasets typically live in **OLAP-optimized systems**  (ex. PostGres, DuckDB or BI models in Power BI) supporting fast reads, aggregations, and secure slicing by geography or time.
 
 **Used by**:  
 Directors, general managers, compliance leads, finance and strategy teams
@@ -82,7 +82,7 @@ Presentation Layer, KPI Model, Semantic Layer, Business Mart
 Each layer in this architecture has its own ideal update frequency — based on its users, purpose, and technical requirements.
 
 **Bronze – Frequent or Real-Time**  
-This layer ingests raw data as it arrives. SCADA readings, sensor logs, and CSV exports should be written to Bronze as frequently as needed — often every few minutes or hourly — to preserve completeness and support real-time models.
+This layer ingests raw data as it arrives. SCADA readings, sensor logs, and CSV exports should be written to Bronze as frequently as needed, often every few minutes or hourly, to preserve completeness and support real-time models.
 
 **Silver – Hourly to Daily**  
 Silver should be updated thoughtfully. It serves users exploring trends or diagnosing recent events. Updates every hour or once daily are typically sufficient. This timing avoids propagating unvalidated data and gives time for QA processes to catch issues.
@@ -97,7 +97,7 @@ Rule of thumb:
 
 ## 🤝 Hybrid Governance: Encouraging Innovation Without Fragmentation
 
-To stay agile, teams must have the freedom to experiment — but also the structure to ensure shared truth. In a hybrid governance model, each tier plays a role in both exploration and standardization:
+To stay agile, teams must have the freedom to experiment but also the structure to ensure shared truth. In a hybrid governance model, each tier plays a role in both exploration and standardization:
 
 1. **Explore in Silver**  
    Analysts and power users can prototype new metrics and filters using cleaned, reliable Silver-layer data. These may include new classifications, time windows, or operational definitions relevant to a specific site or department.
@@ -106,7 +106,9 @@ To stay agile, teams must have the freedom to experiment — but also the struct
    Data scientists and advanced users can work directly with raw Bronze data to build machine learning models, conduct anomaly detection, or generate new operational insights. Starting from the unfiltered source ensures reproducibility, full context, and access to outliers or edge cases that might be cleaned away in Silver.
 
 3. **Promote to Gold**  
+
    When a metric, model output, or derived feature proves valuable:
+
    - It is reviewed by data leads and operational SMEs
    - The logic or model output is formalized in DBT or SQL
    - It is added to the governed Gold layer for broad reuse
@@ -118,13 +120,13 @@ To stay agile, teams must have the freedom to experiment — but also the struct
 5. **Protect enterprise outputs**  
    Dashboards used for strategic planning, board briefings, or regulatory submissions should only draw from the Gold layer to ensure stability, explainability, and data trustworthiness.
 
-This hybrid approach allows analysts and modelers to innovate, while protecting business users from conflicting definitions or unverified results. It also ensures that AI and machine learning outputs contribute to — rather than compete with — the organization's shared understanding of performance.
+This hybrid approach allows analysts and modelers to innovate, while protecting business users from conflicting definitions or unverified results. It also ensures that AI and machine learning outputs contribute to, rather than compete with, the organization's shared understanding of performance.
 
 ---
 
 ## ✅ Why This Works for Water Utilities
 
-Water agencies don’t need a massive tech stack — they need structure, transparency, and alignment.
+Water agencies don’t need a massive tech stack they need; structure, transparency, and alignment.
 
 - **Bronze** ensures nothing is lost or overwritten
 - **Silver** empowers analysts to explore operational trends

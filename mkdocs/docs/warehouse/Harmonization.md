@@ -22,22 +22,27 @@ This guide explains how EDW and BI tools **complement AI/ML**—and when simpler
 ## 🧠 How They Complement Each Other
 
 ### 1. EDW Enables Data Quality and Availability for ML
+
 - **How**: Centralizes raw and cleaned data from multiple sources.  
 - **Why**: ML models require clean, structured, consistent data to be effective.
 
 ### 2. BI Provides Explainability and Feedback Loops
+
 - **How**: Visualizes model outputs and supports drill-down for errors or outliers.  
 - **Why**: Builds trust with stakeholders and supports continuous improvement.
 
 ### 3. EDW Supports Feature Engineering at Scale
+
 - **How**: Provides historical, joined, and normalized data ready for transformation.  
 - **Why**: Enables repeatable, traceable features across models and time.
 
 ### 4. BI Drives Use Cases and Adoption
+
 - **How**: Identifies patterns, anomalies, and outliers that prompt model development.  
 - **Why**: Helps define real-world business problems worth modeling.
 
 ### 5. EDW and BI Provide Governance, Security, and Trust
+
 - **How**: Role-based access control, audit logging, and metric definitions.  
 - **Why**: Enables responsible AI/ML use and regulatory compliance.
 
@@ -47,22 +52,28 @@ This guide explains how EDW and BI tools **complement AI/ML**—and when simpler
 
 ### Use Cases Better Served by BI, Rules, or Stats
 
-1. **KPI Monitoring**  
+#### 1. **KPI Monitoring**  
+
    - Prefer: Dashboards with thresholds and alerts
 
-2. **Root Cause Analysis**  
+#### 2. **Root Cause Analysis**  
+
    - Prefer: SQL segmentations, control charts
 
-3. **Simple Forecasting**  
+#### 3. **Simple Forecasting**  
+
    - Prefer: Linear regression or ARIMA
 
-4. **Anomaly Detection in Small Data**  
+#### 4. **Anomaly Detection in Small Data**  
+
    - Prefer: Z-scores, control limits
 
-5. **Deterministic Decision Logic**  
+#### 5. **Deterministic Decision Logic**  
+
    - Prefer: Rules engines, validation frameworks
 
-6. **Compliance Monitoring**  
+#### 6. **Compliance Monitoring**  
+
    - Prefer: BI + alerts with documented exception thresholds
 
 ---
@@ -70,6 +81,7 @@ This guide explains how EDW and BI tools **complement AI/ML**—and when simpler
 ## 💧 RO Membrane Maintenance – A Real-World BI vs. AI/ML Example
 
 ### Scenario:
+
 A utility tracks Reverse Osmosis (RO) system performance using:
 - Permeate flow rate (GPM)  
 - Salinity or conductivity (µS/cm)  
@@ -77,11 +89,13 @@ A utility tracks Reverse Osmosis (RO) system performance using:
 - Membrane pressure drop (psi)
 
 ### Option A: **BI + Real-Time Alerting**
+
 - Rule: “If flow rate drops >10% over 3 days AND conductivity rises >15% → flag”  
 - Dashboards show trends and alert thresholds  
 - Simple and explainable
 
 ### Option B: **AI/ML Anomaly Detection**
+
 - Complex modeling of multivariate signals  
 - May require retraining and tuning  
 - Risk of false positives or misinterpretation
@@ -110,12 +124,14 @@ A utility tracks Reverse Osmosis (RO) system performance using:
 “Just Enough AI” is a practical approach that avoids AI theater or overengineering by using **lightweight ML** where it adds value—and defers to **BI, statistics, or rule-based logic** when those are faster and clearer.
 
 ### Use Techniques Like:
+
 - **Regression and classification with explainable models (e.g., logistic regression, decision trees)**  
 - **AutoML tools** to test feasibility quickly without full engineering  
 - **Hybrid pipelines**: rules first, model fallback (e.g., escalate only ambiguous cases to ML)  
 - **Batch ML with BI visualization**: models run nightly, results shown in Metabase or Power BI  
 
 ### When to Use:
+
 - When rules don’t work *every time*, but cover most cases  
 - When there’s measurable but **not mission-critical** benefit  
 - When you need **just enough prediction** to aid human decision-making  

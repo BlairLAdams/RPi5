@@ -24,33 +24,33 @@ theme:
 nav:
   - Home: index.md
   - Concepts:
-      - Cognitive Biases: CognitiveBiases.md
-      - Utility Theory: UtilityTheory.md
-      - CMMi: CMMi.md
-      - OKR: OKROverview.md
-      - Value / Effort: ValueEffort.md
-      - Design Thinking: DesignThinking.md
-      - Agile Kanban: Kanban.md
-      - Agile@Scale: AgileAtScale.md
-      - WIMS: Wims.md
+      - Cognitive Biases: concepts/CognitiveBiases.md
+      - Utility Theory: concepts/UtilityTheory.md
+      - CMMi: concepts/CMMi.md
+      - OKR: concepts/OKROverview.md
+      - Value/Effort: concepts/ValueEffort.md
+      - Design Thinking: concepts/DesignThinking.md
+      - Kanban: concepts/Kanban.md
+      - Agile@Scale: concepts/AgileAtScale.md
+      - WIMS: concepts/Wims.md
 
-  - EDW:
-      - Governance Frameworks: GovernanceFrameworks.md
-      - Analytics Architectures: Architectures.md
-      - Tiered Analytics: TieredAnalytics.md
-      - EDW Harmonization: EDWHarmonization.md
-      - Performance Terminology: PerformanceTerms.md
+  - Data Warehose:
+      - Governance: warehouse/Governance.md
+      - Architecture: warehouse/Architecture.md
+      - Tiered Analytics: warehouse/TieredAnalytics.md
+      - Harmonization: warehouse/Harmonization.md
+      - Terminology: warehouse/Terminology.md
 
   - Cyber:
-      - NIST CSF: NISTCSF.md
-      - NIST RMF: NISTRMF.md
-      - NIST Risk Assessment: NISTGuide.md
-      - Purdue Model: PurdueModel.md 
+      - NIST CSF: cyber/NISTCSF.md
+      - NIST RMF: cyber/NISTRMF.md
+      - NIST Risk Assessment: cyber/NISTGuide.md
+      - Purdue Model: cyber/PurdueModel.md 
       
   - Stack:
-      - Raspberry Pi: RPi5.md
-      - Comparisons: StackComparisons.md
-      - DE Skills: SkillLevels.md
+      - Raspberry Pi: stack/RPi5.md
+      - Comparisons: stack/StackComparisons.md
+      - DE Skills: stack/SkillLevels.md
       - Analytics Deck: https://docs.google.com/presentation/d/1ACAE7UquavbQ15peb3CnmLqfQYJWLGAMXQ0OkgR-TMc/edit?usp=sharing
       - Apps:
           - Metabase: https://metabase.hoveto.ca
@@ -61,22 +61,22 @@ nav:
           - MkDocs (this!): https://mkdocs.hoveto.ca
 
   - DMBOK:
-      - Data Governance: 01_governance/index.md
-      - Data Architecture: 02_architecture/index.md
-      - Data Modeling and Design: 03_modeling/index.md
-      - Data Storage and Operations: 04_storage/index.md
-      - Data Security: 05_security/index.md
-      - Data Integration and Interoperability: 06_integration/index.md
-      - Document and Content Management: 07_content/index.md
-      - Reference and Master Data: 08_masterdata/index.md
-      - Data Warehousing and Business Intelligence: 09_warehousing/index.md
-      - Metadata Management: 10_metadata/index.md
-      - Data Quality: 11_quality/index.md
-      - DMBOK Glossary: glossary.md
+      - Data Governance: dmbok/01_governance/index.md
+      - Data Architecture: dmbok/02_architecture/index.md
+      - Data Modeling and Design: dmbok/03_modeling/index.md
+      - Data Storage and Operations: dmbok/04_storage/index.md
+      - Data Security: dmbok/05_security/index.md
+      - Data Integration and Interoperability: dmbok/06_integration/index.md
+      - Document and Content Management: dmbok/07_content/index.md
+      - Reference and Master Data: dmbok/08_masterdata/index.md
+      - Data Warehousing and Business Intelligence: dmbok/09_warehousing/index.md
+      - Metadata Management: dmbok/10_metadata/index.md
+      - Data Quality: dmbok/11_quality/index.md
+      - DMBOK Glossary: dmbok/glossary.md
 
   - Markdown:
-      - Markdown Guide: MarkdownGuide.md
-      - Mermaid Diagrams: MermaidDiagrams.md
+      - Markdown Guide: guide/MarkdownGuide.md
+      - Mermaid Diagrams: guide/MermaidDiagrams.md
 
 plugins:
   - search
