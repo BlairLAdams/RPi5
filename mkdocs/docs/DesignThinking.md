@@ -104,11 +104,3 @@ Try out prototypes with users, gather feedback, and refine the solution.
 
 - IDEO Design Kit  
   https://www.designkit.org/
-
----
-
-## Related Topics
-
-- [Agile Work Management](../agile/index.md)  
-- [User-Centered Data Services](../ux-design/index.md)  
-- [Digital Transformation](../digital/index.md)

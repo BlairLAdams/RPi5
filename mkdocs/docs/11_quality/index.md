@@ -39,7 +39,3 @@ Monitor and improve [data quality](../glossary.md#data-quality) by defining rule
 - Number of unresolved issues over 30 days old  
 - Time-to-resolve for high-priority errors  
 - Data quality score by table, steward, or refresh
-
----
-
-**← Previous:** [Metadata Management](../10_metadata/index.md)

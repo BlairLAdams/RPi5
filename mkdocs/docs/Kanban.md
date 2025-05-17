@@ -131,9 +131,3 @@ Develop ETL   | Create glossary | Validate schema | Owner assignment complete
   https://www.atlassian.com/agile/kanban
 
 ---
-
-## Related Topics
-
-- [Agile Work Management](../agile/index.md)  
-- [Data Governance OKRs](../01_governance/index.md)  
-- [Metrics and KPIs](../performance-metrics/index.md)

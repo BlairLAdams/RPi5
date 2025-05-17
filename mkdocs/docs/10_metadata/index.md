@@ -40,7 +40,3 @@ Document and publish [metadata](../glossary.md#metadata) for priority datasets t
 - Metadata search activity or pageviews  
 - Frequency of metadata updates vs. data refresh schedule
 
----
-
-**← Previous:** [Data Warehousing and Business Intelligence](../09_warehousing/index.md)  
-**Next:** [Data Quality](../11_quality/index.md)

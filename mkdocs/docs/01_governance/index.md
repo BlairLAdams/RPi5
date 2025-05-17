@@ -39,6 +39,3 @@ Establish foundational [data governance](../glossary.md#data-governance) roles, 
 - Charter review frequency (e.g., annually)  
 - Participation rate in governance meetings across departments
 
----
-
-**Next:** [Data Architecture](../02_architecture/index.md)
