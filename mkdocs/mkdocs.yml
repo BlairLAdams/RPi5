@@ -34,7 +34,7 @@ nav:
       - Agile@Scale: concepts/AgileAtScale.md
       - WIMS: concepts/Wims.md
 
-  - Data Warehose:
+  - Data Warehouse:
       - Governance: warehouse/Governance.md
       - Architecture: warehouse/Architecture.md
       - Tiered Analytics: warehouse/TieredAnalytics.md
