@@ -29,14 +29,17 @@ done
 echo "🔓 [INFO] Adding required UFW rules..."
 
 sudo ufw allow 22/tcp    comment 'Allow SSH'
-sudo ufw allow 3000/tcp  comment 'Allow Grafana'
+sudo ufw allow 80/tcp    comment 'Allow Nginx'
+sudo ufw allow 443/tcp   comment 'Allow Nginx'
+sudo ufw allow 9100/tcp  comment 'Allow Node_exporter'
 sudo ufw allow 9090/tcp  comment 'Allow Prometheus'
+sudo ufw allow 3000/tcp  comment 'Allow Grafana'
 sudo ufw allow 3300/tcp  comment 'Allow Dagster'
 sudo ufw allow 8080/tcp  comment 'Allow DBT Docs'
-sudo ufw allow 5432/tcp  comment 'Allow PostgreSQL'
+# sudo ufw allow 5432/tcp  comment 'Allow PostgreSQL'
 sudo ufw allow 3001/tcp  comment 'Allow Metabase'
 sudo ufw allow 8004/tcp  comment 'Allow MkDocs'
-sudo ufw allow 5001/tcp  comment 'Alertmanager webhook receiver'
+# sudo ufw allow 5001/tcp  comment 'Alertmanager webhook receiver'
 
 sudo ufw reload
 

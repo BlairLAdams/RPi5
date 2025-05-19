@@ -36,7 +36,7 @@ nav:
 
   - Data Warehouse:
       - Governance: warehouse/Governance.md
-      - Architecture: warehouse/Architecture.md
+      - Architectures: warehouse/Architectures.md
       - Tiered Analytics: warehouse/TieredAnalytics.md
       - Harmonization: warehouse/Harmonization.md
       - Terminology: warehouse/Terminology.md
