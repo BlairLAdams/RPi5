@@ -1,4 +1,4 @@
-# Metrics vs KPIs vs Measures vs Key Results
+# Vision to Metrics
 
 This page defines and distinguishes between performance terms used in data governance, OKRs, and operational monitoring, grouped by **strategic** and **tactical** function.
 

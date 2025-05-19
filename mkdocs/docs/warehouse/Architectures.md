@@ -4,7 +4,7 @@ This section outlines foundational and modern data architecture patterns used to
 
 ---
 
-## 1.1 Traditional Enterprise Data Warehouse (EDW)
+## 1. Traditional Enterprise Data Warehouse (EDW)
 
 ### Inmon (Top-Down)
 
@@ -38,7 +38,7 @@ Best for agencies with dynamic data sources and strict audit or lineage requirem
 
 ---
 
-## 1.2 Lakehouse Architecture
+## 2. Lakehouse Architecture
 
 For utilities and air quality agencies modernizing toward scalable cloud solutions, Lakehouse offers flexibility to handle both structured (e.g., work orders) and semi-structured (e.g., sensor logs) data. Key to adoption is strong DevOps support, investment in cloud infrastructure, and a data team trained in ACID-compliant formats like Delta or Iceberg.
 
@@ -51,7 +51,7 @@ For utilities and air quality agencies modernizing toward scalable cloud solutio
 
 ---
 
-## 1.3 Medallion Architecture (Bronze–Silver–Gold)
+## 3. Medallion Architecture (Bronze–Silver–Gold)
 
 A great fit for water utilities managing SCADA, CMMS, and LIMS data. This architecture supports data validation and enrichment workflows and aligns with public sector goals for transparency and stewardship. End-user success hinges on having clear documentation and gradual onboarding to promote trust in layered data.
 
@@ -66,7 +66,7 @@ A great fit for water utilities managing SCADA, CMMS, and LIMS data. This archit
 
 ---
 
-## 1.4 Operational Data Store (ODS)
+## 4. Operational Data Store (ODS)
 
 Ideal for near-term reporting needs in field operations, such as water main breaks, service tickets, or sampling events. Adoption is smoother if tools are integrated with work management systems and if business users are trained to distinguish between operational vs. historical data.
 
@@ -79,7 +79,7 @@ Ideal for near-term reporting needs in field operations, such as water main brea
 
 ---
 
-## 1.5 Lambda Architecture
+## 5. Lambda Architecture
 
 Relevant for water utilities with real-time telemetry (e.g., pressure, flow) that must also support historical reporting. Its complexity can be a barrier—successful adoption requires real-time observability needs, sufficient engineering capacity, and a well-governed approach to combining batch and stream data.
 
@@ -94,7 +94,7 @@ Relevant for water utilities with real-time telemetry (e.g., pressure, flow) tha
 
 ---
 
-## 1.6 Kappa Architecture
+## 6. Kappa Architecture
 
 Best suited for edge analytics or sensor networks with high-frequency data (e.g., SCADA, AMI, AQ sensors). Kappa simplifies operations by treating all data as a stream. For adoption, organizations must invest in stream-native tooling and establish real-time alerting or visualization use cases.
 
@@ -106,7 +106,7 @@ Best suited for edge analytics or sensor networks with high-frequency data (e.g.
 
 ---
 
-## 1.7 Event-Driven Architecture
+## 7. Event-Driven Architecture
 
 Applies well to permit management, compliance actions, or telemetry alerting systems where each state change is significant. Adoption depends on having a culture of immutability and strong system integration capabilities. Event logs must be well-documented and queryable.
 
@@ -118,7 +118,7 @@ Applies well to permit management, compliance actions, or telemetry alerting sys
 
 ---
 
-## 1.8 Federated Query / Virtual Warehouse
+## 8. Federated Query / Virtual Warehouse
 
 Useful for utilities with siloed systems or partner agencies needing cross-platform insights. Supports scenarios where moving data is restricted due to regulation or policy. Adoption requires data stewards to define views, ensure data quality, and train users on latency and performance tradeoffs.
 
@@ -130,7 +130,7 @@ Useful for utilities with siloed systems or partner agencies needing cross-platf
 
 ---
 
-## 1.9 Knowledge Graphs
+## 9. Knowledge Graphs
 
 Ideal for agencies maintaining asset registries, regulations, or ontologies (e.g., water quality standards, facility hierarchies). Knowledge graphs support metadata enrichment and lineage tracking. Success depends on well-curated data dictionaries and technical staff familiar with graph databases and semantic modeling.
 
