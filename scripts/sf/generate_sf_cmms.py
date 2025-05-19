@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-generate_cmms.py
-
+generate_sf_cmms.py
+ 
 Creates synthetic CMMS work order data for Lake Merced infrastructure,
 including a variety of assets such as reservoirs, valves, analyzers, pumps,
 flow meters, and dosing equipment.
@@ -14,7 +14,7 @@ Each record reflects a realistic work order, with fields such as:
 - Maintenance cost and technician notes
 
 Output:
-- Path: /home/blair/scr/scripts/bronze/synthetic/SF/cmms.csv
+- Path: /home/blair/scr/scripts/bronze/synthetic/SF/sf_cmms.csv
 - Columns: wo_id, asset_id, cmms_name, location, type, work_type, priority, status, opened_date, closed_date, cost, notes
 """
 
@@ -31,7 +31,7 @@ import pandas as pd
 # ─────────────────────────────────────────────────────────────
 # Configuration
 # ─────────────────────────────────────────────────────────────
-OUTPUT_PATH = "/home/blair/scr/scripts/bronze/synthetic/SF/cmms.csv"
+OUTPUT_PATH = "/home/blair/scr/scripts/bronze/synthetic/SF/sf_cmms.csv"
 
 ASSETS = [
     {"asset_id": "LM_RES_WEST", "cmms_name": "LM-WB-RES01", "location": "West Basin", "type": "Reservoir"},

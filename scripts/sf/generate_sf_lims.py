@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-generate_lims.py
+generate_sf_lims.py
 
 Generates synthetic LIMS grab sample data for Lake Merced water infrastructure,
 aligned with SCADA and CMMS monitoring locations.
@@ -18,7 +18,7 @@ Analytes:
 - pH (Probe)
 
 Output:
-- Path: /home/blair/scr/scripts/bronze/synthetic/SF/lims.csv
+- Path: /home/blair/scr/scripts/bronze/synthetic/SF/sf_lims.csv
 - Columns: sample_id, site_code, analyte, value, units, method, sample_time
 """
 
@@ -35,7 +35,7 @@ import pandas as pd
 # Configuration
 # ─────────────────────────────────────────────────────────────
 OUTPUT_DIR = "/home/blair/scr/scripts/bronze/synthetic/SF"
-OUTPUT_FILE = "lims.csv"
+OUTPUT_FILE = "sf_lims.csv"
 OUTPUT_PATH = os.path.join(OUTPUT_DIR, OUTPUT_FILE)
 
 SAMPLE_SITES = [

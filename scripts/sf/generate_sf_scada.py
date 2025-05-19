@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-generate_scada.py
+generate_sf_scada.py
 
 Generates synthetic SCADA data for Lake Merced infrastructure assets with a star-schema-friendly `asset_id`.
 
@@ -16,7 +16,7 @@ This script simulates operational telemetry for:
 The generated data supports dimensional modeling and is suitable for ingestion into a Bronze layer of a medallion architecture.
 
 Output:
-- Path: ~/scr/scripts/bronze/synthetic/SF/scada.csv
+- Path: ~/scr/scripts/bronze/synthetic/SF/sf_scada.csv
 - Columns: timestamp, asset_id, tag_name, value, units, status
 """
 
@@ -33,7 +33,7 @@ import pandas as pd
 # ─────────────────────────────────────────────────────────────
 # Configuration
 # ─────────────────────────────────────────────────────────────
-OUTPUT_PATH = os.path.expanduser("~/scr/scripts/bronze/synthetic/SF/scada.csv")
+OUTPUT_PATH = os.path.expanduser("~/scr/scripts/bronze/synthetic/SF/sf_scada.csv")
 
 SCADA_TAGS = [
     {"asset_id": "ASSET_WB_CL2", "tag_name": "LM.WESTBASIN.CL2_RESIDUAL", "units": "mg/L", "min_val": 0.2, "max_val": 1.0},
