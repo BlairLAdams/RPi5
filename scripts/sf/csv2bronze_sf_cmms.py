@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-loaddb_sf_scada.py
+csv2bronze_sf_cmms.py
 
-Loads SCADA telemetry data from a synthetic source into the `bronze.scada` table.
-Source file: /home/blair/scr/scripts/bronze/synthetic/SF/sf_scada.csv
+Loads CMMS work order data from a synthetic source into the `bronze.cmms` table.
+Source file: /home/blair/scr/scripts/bronze/synthetic/SF/sf_cmms.csv
 """
 
 import polars as pl
@@ -13,13 +13,13 @@ import os
 from pathlib import Path
 
 # Configuration
-CSV_PATH = Path("/home/blair/scr/scripts/bronze/synthetic/SF/sf_scada.csv")
-TABLE_NAME = "sf_scada"
+CSV_PATH = Path("/home/blair/scr/scripts/bronze/synthetic/SF/sf_cmms.csv")
+TABLE_NAME = "sf_cmms"
 SCHEMA = "bronze"
-SITE_CODE = CSV_PATH.parent.name        # 'SF'
-SOURCE_TYPE = CSV_PATH.parent.parent.name  # 'synthetic'
+SITE_CODE = CSV_PATH.parent.name
+SOURCE_TYPE = CSV_PATH.parent.parent.name
 
-# PostgreSQL connectionls
+# PostgreSQL connection
 pg_user = input("PostgreSQL user: ")
 pg_pass = getpass.getpass("PostgreSQL password: ")
 engine = create_engine(f"postgresql://{pg_user}:{pg_pass}@localhost:5432/analytics")
@@ -40,4 +40,4 @@ df.write_database(
     if_table_exists="replace"
 )
 
-print(f"✅ Loaded {df.shape[0]} SCADA records into {SCHEMA}.{TABLE_NAME}")
+print(f"✅ Loaded {df.shape[0]} CMMS records into {SCHEMA}.{TABLE_NAME}")

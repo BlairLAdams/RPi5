@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-loaddb_sf_lims.py
+csv2bronze_sf_lims.py
 
 Loads LIMS grab sample data from a synthetic source into the `bronze.lims` table.
 Source file: /home/blair/scr/scripts/bronze/synthetic/SF/sf_lims.csv

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-generate_sf_scada.py
+generate_csv_sf_scada.py
 
 Generates synthetic SCADA data for Lake Merced infrastructure assets with a star-schema-friendly `asset_id`.
 

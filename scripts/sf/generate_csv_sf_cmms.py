@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-generate_sf_cmms.py
+generate_csv_sf_cmms.py
  
 Creates synthetic CMMS work order data for Lake Merced infrastructure,
 including a variety of assets such as reservoirs, valves, analyzers, pumps,

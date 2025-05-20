@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-generate_sf_lims.py
+generate_csv_sf_lims.py
 
 Generates synthetic LIMS grab sample data for Lake Merced water infrastructure,
 aligned with SCADA and CMMS monitoring locations.
