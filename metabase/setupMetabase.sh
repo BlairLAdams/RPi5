@@ -1,106 +1,72 @@
 #!/bin/bash
-# setupMetabase.sh
-# ============================================================
-# Fresh installation of Metabase and Java.
-# Installs OpenJDK 11, downloads Metabase, and sets it up with systemd.
-# ============================================================
+# ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+# ✅ File: setupMetabase.sh
+# 📌 Purpose: Install and run Metabase on Raspberry Pi
+# 🌐 Exposed at: https://metabase.hoveto.ca via NGINX
+# 📁 Location: ~/scr/scripts/
+# ☁️ Maintainer: blairladams @ github.com
+# ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 
 set -e
 
-# ------------------------------------------------------------
-# Step 1: Clean up previous installations
-# ------------------------------------------------------------
+# -------------------------------
+# 📦 Download Metabase
+# -------------------------------
+echo "🌐 Downloading Metabase JAR..."
+mkdir -p ~/scr/metabase
+cd ~/scr/metabase
+curl -L -o metabase.jar https://downloads.metabase.com/v0.49.10/metabase.jar
 
-echo "⚠️ Removing any previous Metabase and Java installations..."
-
-# Stop Metabase service if exists
-sudo systemctl stop metabase.service || true
-sudo systemctl disable metabase.service || true
-sudo rm /etc/systemd/system/metabase.service || true
-
-# Remove Metabase directory
-rm -rf ~/scr/metabase || true
-
-# Remove Java installations
-sudo apt remove --purge openjdk-8-jdk openjdk-11-jdk -y || true
-
-# Clean up environment variables in .bashrc
-sed -i '/export JAVA_HOME/d' ~/.bashrc
-sed -i '/export PATH.*jdk/d' ~/.bashrc
-source ~/.bashrc
-
-echo "✅ Clean up complete."
-
-# ------------------------------------------------------------
-# Step 2: Install OpenJDK (either 8 or 11)
-# ------------------------------------------------------------
-
-echo "📦 Installing OpenJDK 11 (required by Metabase)..."
-
-# Update the package list and install OpenJDK 11
-sudo apt update
-sudo apt install -y openjdk-11-jdk
-
-# Verify Java installation
-java -version
-
-echo "✅ Java 11 installed successfully!"
-
-# ------------------------------------------------------------
-# Step 3: Install and Set up Metabase
-# ------------------------------------------------------------
-
-echo "📦 Downloading and installing Metabase..."
-
-# Download and extract Metabase
-cd "$HOME/scr"
-curl -L https://downloads.metabase.com/v0.43.0/metabase.tar.gz -o metabase.tar.gz
-tar xvf metabase.tar.gz
-rm metabase.tar.gz
-
-echo "✅ Metabase downloaded and extracted to ~/scr/metabase."
-
-# ------------------------------------------------------------
-# Step 4: Create and Enable Metabase systemd service
-# ------------------------------------------------------------
-
-SERVICE_FILE="/etc/systemd/system/metabase.service"
-
-echo "🛠 Creating systemd service for Metabase..."
-
-# Create the systemd service file
-sudo tee "$SERVICE_FILE" > /dev/null <<EOF
+# -------------------------------
+# 🛠️ Create Metabase systemd service
+# -------------------------------
+echo "🧾 Creating systemd service for Metabase..."
+sudo tee /etc/systemd/system/metabase.service > /dev/null <<EOF
 [Unit]
-Description=Metabase Service
+Description=Metabase analytics dashboard
 After=network.target
 
 [Service]
-Type=simple
-User=blair
-WorkingDirectory=$HOME/scr/metabase
-ExecStart=java -DMB_JETTY_PORT=3001 -jar $HOME/scr/metabase/metabase.jar
+WorkingDirectory=/home/blair/scr/metabase
+ExecStart=/usr/bin/java -jar /home/blair/scr/metabase/metabase.jar
 Restart=always
-RestartSec=5
-StandardOutput=append:$HOME/scr/logs/metabase.log
-StandardError=append:$HOME/scr/logs/metabase.err
+User=blair
+Environment=MB_DB_TYPE=postgres
+Environment=MB_DB_DBNAME=metabase
+Environment=MB_DB_PORT=5432
+Environment=MB_DB_USER=blair
+Environment=MB_DB_PASS=your_password_here
+Environment=MB_DB_HOST=localhost
+Environment=MB_JETTY_PORT=3001
 
 [Install]
 WantedBy=multi-user.target
 EOF
 
-# Reload systemd and enable the Metabase service
 sudo systemctl daemon-reexec
 sudo systemctl daemon-reload
-sudo systemctl enable metabase.service
-sudo systemctl start metabase.service
+sudo systemctl enable metabase
+sudo systemctl start metabase
 
-echo "✅ Metabase service created and running in the background on port 3001."
+# -------------------------------
+# 🌐 Configure NGINX reverse proxy
+# -------------------------------
+echo "🌐 Configuring NGINX for metabase.hoveto.ca..."
+sudo tee /etc/nginx/sites-available/metabase.hoveto.ca > /dev/null <<EOF
+server {
+    listen 80;
+    server_name metabase.hoveto.ca;
 
-# ------------------------------------------------------------
-# Step 5: Final check and access instructions
-# ------------------------------------------------------------
+    location / {
+        proxy_pass http://localhost:3001;
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+    }
+}
+EOF
 
-echo ""
-echo "🌐 You can access Metabase at: http://localhost:3001"
-echo "    Or remotely at: http://<pi-ip>:3001"
-echo "    (Make sure port 3001 is open in your firewall)"
+sudo ln -sf /etc/nginx/sites-available/metabase.hoveto.ca /etc/nginx/sites-enabled/metabase.hoveto.ca
+sudo nginx -t && sudo systemctl reload nginx
+
+echo "✅ Metabase installed and served at https://metabase.hoveto.ca"
