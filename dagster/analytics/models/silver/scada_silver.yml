@@ -1,0 +1,31 @@
+- name: bronze2silver_sf_scada
+  description: >
+    Cleaned and QA-checked SCADA data for the SF region. Parsed timestamps into separate date/time fields
+    and applied domain-based validation (e.g., pH between 0–14).
+  tags: ['silver', 'qa', 'scada']
+  meta:
+    owner: blair
+    sla: hourly
+    dagster_job: scada_bronze_to_silver
+    last_validated: 2025-05-21
+    validated_by: great_expectations
+  columns:
+    - name: date
+      description: Parsed date component of original timestamp
+      tests:
+        - not_null
+    - name: time
+      description: Parsed time component of original timestamp
+    - name: asset_id
+      description: FK to asset dimension (to be used in star schema)
+      tests:
+        - not_null
+    - name: tag_name
+      description: SCADA tag type
+    - name: value
+      description: Cleaned sensor reading
+    - name: status
+      description: QA flag for binary tag health
+      tests:
+        - accepted_values:
+            values: [0, 1]

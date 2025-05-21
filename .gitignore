@@ -1,53 +1,58 @@
-# Python artifacts
+# ─────────────────────────────────────────────────────────────
+# Python cache and logs
+# ─────────────────────────────────────────────────────────────
 __pycache__/
 *.pyc
 *.log
 *.tmp
 *.bak
 *.db
-
-# MkDocs build output
-/mkdocs/site/
-
-# dbt artifacts
-/dbt/target/
-/dbt/dbt_packages/
-/dbt/logs/
-
-# Backup or OS junk
-*.log
-*.pyc
-__pycache__/
-.DS_Store
-.env
+*.csv
+*.json
+*.pid
 
 # Virtual environments (any depth)
+# Ignore app-specific virtual environments
+dagster/venv/
+mkdocs/venv/
 venv/
 */venv/
 .venv/
-venv_bak/
 
-# Data artifacts
-*.parquet
-*.csv
+# ─────────────────────────────────────────────────────────────
+# Project-specific structure
+# ─────────────────────────────────────────────────────────────
 
-# Build/package/dependency folders
-**/target/
-**/dbt_packages/
+# Ignore compiled DBT artifacts
+analytics/target/
+analytics/dbt_packages/
+analytics/logs/
 
-# OS/editor system junk
-.DS_Store
+# Ignore Dagster instance state — but keep source
+.dagster_home/
+dagster_home/
+!analytics/**
+!etl/**
 
-# Dagster project cache and history
-/dagster/
+# Ignore top-level backup zips or temp files
+dagster_backup_*.zip
 
-# Metabase database artifacts
+# ─────────────────────────────────────────────────────────────
+# Metabase (local)
+# ─────────────────────────────────────────────────────────────
 metabase/*.mv.db
 metabase/*.trace.db
 *.jar
 
-# DBT artifacts
-dbt/logs/
-dbt/target/
-dagster_backup_20250514_1306.zip*.env
-*.env.sh
+# ─────────────────────────────────────────────────────────────
+# Documentation (MkDocs or static site output)
+# ─────────────────────────────────────────────────────────────
+mkdocs/site/
+
+# ─────────────────────────────────────────────────────────────
+# Local secrets and OS artifacts
+# ─────────────────────────────────────────────────────────────
+.env
+.env.sh
+.env.bak
+.DS_Store

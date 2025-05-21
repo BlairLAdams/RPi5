@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: silver2gold_sf_scada
+    description: >
+      Unified fact table consolidating SCADA metrics into a long-format observation record.
+      Supports regulatory, dashboarding, and AI readiness.
+    tags: ['gold', 'reporting', 'regulatory']
+    meta:
+      owner: blair
+      sla: daily
+      dagster_job: silver_to_gold_sf_scada
+      star_schema: true
+      consumers: [metabase, grafana, regulatory_reporting]
+    columns:
+      - name: obs_id
+        description: Unique surrogate key for each observation
+        tests:
+          - unique
+          - not_null
+      - name: date
+        description: Observation date
+        tests:
+          - not_null
+      - name: time
+        description: Observation time
+      - name: asset_id
+        description: FK to asset dimension table
+      - name: metric_type
+        description: Metric (e.g., CL2_residual, turbidity)
+      - name: value
+        description: Observation value (float)
+      - name: source_system
+        description: Indicates origin (SCADA)

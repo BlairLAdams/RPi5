@@ -1,0 +1,16 @@
+name: analytics
+version: '1.0'
+profile: analytics
+
+model-paths: ["models"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  analytics:
+    bronze:
+      +schema: bronze
+    silver:
+      +schema: silver
+    gold:
+      +schema: gold

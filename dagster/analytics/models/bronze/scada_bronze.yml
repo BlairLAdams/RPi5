@@ -1,0 +1,29 @@
+version: 2
+
+sources:
+  - name: scada
+    database: analytics
+    schema: bronze
+    tables:
+      - name: scada_sf
+        description: >
+          Raw synthetic SCADA data ingested from CSV simulation. Captures asset telemetry such as
+          flow, chemical dosage, pH, turbidity, and operational status flags.
+        meta:
+          source_type: csv
+          refresh_cadence: manual
+          ingestion_tool: pandas
+          generator_script: generate_csv_sf_scada.py
+        columns:
+          - name: timestamp
+            description: UTC timestamp of reading
+          - name: asset_id
+            description: Unique asset identifier (star schema compatible)
+          - name: tag_name
+            description: SCADA tag name (e.g., 'CL2_residual')
+          - name: value
+            description: Raw sensor value
+          - name: units
+            description: Engineering units of measure
+          - name: status
+            description: Binary flag indicating sensor health
