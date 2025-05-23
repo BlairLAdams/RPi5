@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ###############################################################################
-# restart.sh — Restart Dagster & DBT Docs (w/ Static Fallback)
+# restart_dagdbt.sh — Restart Dagster & DBT Docs (w/ Static Fallback)
 # Author: Blair | Updated: 2025-05-21
 ###############################################################################
 

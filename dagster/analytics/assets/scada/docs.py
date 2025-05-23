@@ -1,20 +1,41 @@
-from dagster import asset
-import subprocess
-import shutil
 import os
+import subprocess
+from pathlib import Path
 
-@asset
-def generate_dbt_docs():
-    """
-    Regenerates dbt docs from the project. Serves `dbt docs serve` externally.
-    """
-    dbt_dir = "/home/blair/scr/dagster/analytics"
-    docs_dir = os.path.join(dbt_dir, "docs")
-    target_dir = os.path.join(dbt_dir, "target")
+from dagster import asset, Nothing, OpExecutionContext
 
-    subprocess.run(["dbt", "docs", "generate"], cwd=dbt_dir, check=True)
+@asset(
+    name="generate_sf_scada_docs",
+    description="Run `dbt docs generate` for the SF SCADA project and log any errors.",
+)
+def generate_sf_scada_docs_asset(context: OpExecutionContext) -> Nothing:
+    project_dir = Path(__file__).resolve().parent.parent
 
-    # Optional: keep docs around for inspection / fallback / archive
-    if os.path.exists(docs_dir):
-        shutil.rmtree(docs_dir)
-    shutil.copytree(target_dir, docs_dir)
+    # Build a bash -lc invocation so we source the activate script,
+    # pick up all its exports (DBT_USER, DBT_PASS, PGPASSWORD, etc),
+    # and then run dbt in one shot.
+    activate = os.path.expanduser("~/scr/dagster/venv/bin/activate")
+    bash_cmd = f"source {activate} && dbt docs generate"
+
+    context.log.info(f"🔧 Running in bash: {bash_cmd!r} (cwd={project_dir})")
+
+    try:
+        # shell=True + executable="/bin/bash" + -lc will:
+        #  1) load a login shell (so it reads your venv activate)
+        #  2) run the compound command
+        proc = subprocess.run(
+            bash_cmd,
+            cwd=str(project_dir),
+            shell=True,
+            check=True,
+            text=True,
+            executable="/bin/bash",
+        )
+        # dbt prints to stdout/stderr directly; if you need logs you can
+        # remove capture or read proc.stdout / proc.stderr here.
+    except subprocess.CalledProcessError as err:
+        # Log what dbt spat out, then surface the failure
+        context.log.error(f"dbt docs failed:\n{err.stderr or err.stdout}")
+        raise RuntimeError("❌ dbt docs generate failed; see logs above") from err
+
+    return Nothing()

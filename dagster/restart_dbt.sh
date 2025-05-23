@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ###############################################################################
-# restart_dbtdocs.sh — Restart DBT Docs on Port 8080
+# restart_dbt.sh — Restart DBT Docs on Port 8080
 # Author: Blair | Updated: 2025-05-21
 ###############################################################################
 
