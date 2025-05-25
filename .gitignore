@@ -56,3 +56,5 @@ mkdocs/site/
 .env.sh
 .env.bak
 .DS_Store
+dagster/analytics/target/graph.gpickle
+dagster/analytics/target/partial_parse.msgpack
