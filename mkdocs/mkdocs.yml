@@ -25,6 +25,7 @@ nav:
   - Home: index.md
   - Concepts:
       - GM Top 10: concepts/GMTop10.md
+      - AI in Water: concepts/AiInWater.md
       - Insights as a Service: concepts/InsightsAsAService.md
       - Data Seven V's: concepts/SevenVs.md
       - Cognitive Biases: concepts/CognitiveBiases.md

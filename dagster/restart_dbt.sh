@@ -10,7 +10,7 @@ set -e
 VENV_PATH="$HOME/scr/dagster/venv"
 DBT_PROJECT_DIR="$HOME/scr/dagster/analytics"
 DBT_DOCS_PORT=8080
-LOGFILE="$DBT_PROJECT_DIR/dbt-docs.log"
+LOGFILE="$DBT_PROJECT_DIR/logs/dbt-docs.log"
 
 echo "[restart_dbtdocs.sh] 🔁 Restarting DBT Docs on port $DBT_DOCS_PORT..."
 

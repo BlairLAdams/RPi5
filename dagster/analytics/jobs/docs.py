@@ -1,15 +1,11 @@
-from dagster import Definitions, define_asset_job
-from analytics.assets import all_assets
-from analytics.sensors.docs_sensor import trigger_generate_sf_scada_docs
+from dagster import define_asset_job, AssetSelection
 
-# Job to run the docs generation asset
+# Job to materialize only the docs-generation asset
+# The variable name matches what repository.py imports
+# The job name ends in _job to avoid naming collisions
+# We select the asset key "generate_sf_scada_docs", which is the name of the @asset
+
 generate_sf_scada_docs = define_asset_job(
-    name="generate_sf_scada_docs",
-    selection=["generate_sf_scada_docs_asset"]
-)
-
-defs = Definitions(
-    assets=all_assets,
-    jobs=[generate_sf_scada_docs],
-    sensors=[trigger_generate_sf_scada_docs],
+    name="generate_sf_scada_docs_job",
+    selection=AssetSelection.keys("generate_sf_scada_docs"),
 )

@@ -11,7 +11,7 @@ IFS=$'\n\t'
 readonly DAGSTER_HOME="$HOME/scr/dagster/.dagster_home"
 readonly VENV_ACTIVATE="$HOME/scr/dagster/venv/bin/activate"
 readonly ANALYTICS_DIR="$HOME/scr/dagster"
-readonly LOGFILE="$ANALYTICS_DIR/dagster.log"
+readonly LOGFILE="$ANALYTICS_DIR/logs/dagster.log"
 readonly DAGSTER_PORT=3300
 
 ### Error handler ###

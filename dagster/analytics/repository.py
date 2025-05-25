@@ -1,34 +1,40 @@
-from dagster import Definitions, define_asset_job, AssetSelection
-from dagster_dbt import dbt_assets
 from pathlib import Path
 import json
 
-from .pipelines.scada_pipeline import scada_pipeline
+from dagster import Definitions, define_asset_job, AssetSelection
+from dagster_dbt import dbt_assets
 
-# Load compiled DBT manifest
-manifest_path = Path(__file__).resolve().parent / "target" / "manifest.json"
+from analytics.pipelines.scada_pipeline import scada_pipeline
+from analytics.assets import all_assets
+from analytics.jobs.docs import generate_sf_scada_docs
+from analytics.sensors.docs_sensor import trigger_generate_sf_scada_docs
+
+# --- load the dbt manifest if it exists ---
+manifest_path = Path(__file__).parent / "target" / "manifest.json"
 if manifest_path.exists():
-    with open(manifest_path) as f:
-        manifest_json = json.load(f)
-    has_nodes = "nodes" in manifest_json and manifest_json["nodes"]
-else:
-    manifest_json = {}
-    has_nodes = False
+    manifest_json = json.loads(manifest_path.read_text())
 
-# Only register dbt assets if there are nodes
-if has_nodes:
     @dbt_assets(manifest=manifest_json)
     def dbt_project_assets():
+        # decorator will collect your dbt nodes; return empty list
         return []
 
-    assets = [dbt_project_assets]
+    dbt_asset_list = [dbt_project_assets]
 else:
-    assets = []
+    dbt_asset_list = []
 
-# Define jobs
-all_assets_job = define_asset_job("all_assets_job", selection=AssetSelection.all())
+# --- define your “all assets” job if you still want it ---
+all_assets_job = define_asset_job(
+    name="all_assets_job",
+    selection=AssetSelection.all(),
+)
 
 defs = Definitions(
-    jobs=[scada_pipeline, all_assets_job],
-    assets=assets,
+    assets=[*all_assets, *dbt_asset_list],
+    jobs=[
+        scada_pipeline,
+        all_assets_job,
+        generate_sf_scada_docs,
+    ],
+    sensors=[trigger_generate_sf_scada_docs],
 )
